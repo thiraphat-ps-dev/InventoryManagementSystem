@@ -1,0 +1,19 @@
+$primary: #0191ea;
+$secondary: #888888;
+$lightsecondary: #e8e7ed;
+$success: #5cb85c;
+$danger: #d9534f;
+$light: #ffffff;
+
+.login-page {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to right, $light 0 40%, $primary 0 60%);
+  font-family: 'Source Code Pro', monospace;
+}
+
+.login-container {
+  height: 600px;
+  width: 600px;
+  background-color: #ffffff;
+}
