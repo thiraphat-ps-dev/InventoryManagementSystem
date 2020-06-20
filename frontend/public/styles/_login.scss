@@ -1,0 +1,172 @@
+$primary: #0191ea;
+$secondary: #888888;
+$lightsecondary: #e8e7ed;
+$success: #5cb85c;
+$danger: #d9534f;
+$light: #ffffff;
+
+.login-page {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to right, #ffffff 0 40%, #606171 0 60%);
+  font-family: 'Source Code Pro', monospace;
+}
+
+.login-container {
+  // height: 600px;
+  // width: 600px;
+  // width: 100%;
+  // min-width: 400px;
+  // max-width: 800px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  width: 800px;
+  height: 500px;
+}
+
+.login-banner {
+  // width: 60%;
+  background-image: url(https://sv1.picz.in.th/images/2020/06/06/qDGeTE.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  // min-width: 500px;
+
+  // min-height: 500px;
+  width: 60%;
+  // height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  > .text {
+    font-size: 76px;
+    font-weight: bold;
+    mix-blend-mode: difference;
+    color: #ffffff;
+    // width: 350px;
+    // word-break: break-all;
+  }
+}
+
+.form-container {
+  display: flex;
+
+  width: 40%;
+  padding: 10px;
+  // min-width: 300px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // width: 100%;
+  // min-width: 300px;
+
+  > .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    p {
+      font-size: 28px;
+      font-weight: 500;
+    }
+    .fa-sign-in-alt {
+      width: 25px;
+      height: 25px;
+      margin-left: 10px;
+    }
+  }
+  > .input {
+    width: 100%;
+    position: relative;
+    margin: 10px;
+    > label {
+      position: absolute;
+      background-color: #ffffff;
+      left: 5px;
+      top: -8px;
+    }
+    > input {
+      padding: 10px;
+      width: 100%;
+    }
+  }
+  > .error-label {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    margin-top: 10px;
+    background-color: $danger;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 5px 10px;
+    transform: translateX(0px);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+}
+
+.forgot-button {
+  color: $danger !important;
+  margin: 20px 0;
+  text-decoration: none !important;
+  transform: translateX(0px);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background-color: transparent;
+
+  &::after {
+    margin-top: 5px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: $danger;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  &:hover {
+    transform: translateX(2px);
+    &::after {
+      width: 100%;
+    }
+  }
+}
+.signin-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  width: 100%;
+  background-color: $success;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  outline: none !important;
+  transform: translateX(0px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  &:hover {
+    transform: translateX(2px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
+  &:active {
+    transform: translateX(-2px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+  >.fa-sign-in-alt{
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+  }
+}
