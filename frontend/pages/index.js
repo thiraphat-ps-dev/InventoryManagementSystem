@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export default function index() {
-  return (
-    <div>
-      <h1>Login</h1>
-    </div>
-  );
+import { connect } from 'react-redux';
+
+class index extends Component {
+  render() {
+    console.log(this.props.countreducer);
+    console.table(this.props.userdata.data);
+    return (
+      <div>
+        <h1>index</h1>
+      </div>
+    );
+  }
 }
+
+const mapStateToProps = (state) => ({
+  countreducer: state.counts,
+  userdata: state.user,
+});
+
+export default connect(mapStateToProps, null)(index);

@@ -24,6 +24,7 @@
     "redux-thunk": "^2.3.0",
     "save-dev": "0.0.1-security",
     "redux-devtools-extension": "^2.13.7",
-    "immutable": "^3.8.2"
+    "immutable": "^3.8.2",
+    "redux-persist": "5.9.0"
   }
 }

@@ -18,7 +18,6 @@ const numbersReducer = (state = initialState, action) => {
       return {
         ...state,
         // count: action.books,
-
         count: state.count - 1,
       };
     }

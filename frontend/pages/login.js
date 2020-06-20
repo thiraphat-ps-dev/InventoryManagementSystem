@@ -3,30 +3,42 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee, faSign, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 const fetch = require('node-fetch');
-import { dispatchIncrement, dispatchDecrement } from '../redux/actions';
+import { dispatchIncrement, dispatchDecrement, dispatchAuthentication } from '../redux/actions';
+import Link from 'next/link';
+import { headers, api, clientId, clientSecret } from './api';
 
 class Login extends Component {
   componentDidMount() {
-    const url = 'http://localhost:8000/o/token/';
-    const headers = {
-      Accept: 'application/json',
-      'Content-Type': 'application/x-www-form-urlencoded',
-    };
-    const clientId = 'l0wXC32f2KEjF5v7Rij2nwt5DDlwDbj7JwIoyOjR';
-    const clientSecret = 'T63y0frxfRUIejajetgspci4EdCpvH5xrDaXRKQZT8E3r1RyqbWQniLWxdaA9g1rGYgTvMaSub3i9eF5S13fExuiafE3ydQC69bWmHCa2gC03m2JzoSbEEEPNs4QcZzN';
-    fetch(url, {
+    // const url = 'http://localhost:8000/o/token/';
+
+    const username = 'admin';
+    const password = '1234';
+
+    // let status;
+    fetch(api.get_token, {
       method: 'POST',
       headers,
-      body: `grant_type=password&username=admin&password=1234&client_id=${clientId}&client_secret=${clientSecret}`,
+      body: `grant_type=password&username=${username}&password=${password}&client_id=${clientId}&client_secret=${clientSecret}`,
     })
-      .then((res) => res.json())
+      .then((res) =>
+        // console.log(res.status);
+        res.json()
+      )
       .then((json) => {
         console.table(json);
-        // Do something with the returned data.
+        localStorage.setItem('access_token', json.access_token);
+        this.props.handleBookLogin(json);
       });
+    const persist_data = JSON.parse(localStorage.getItem('persist:root'));
+    const countsdata = JSON.parse(persist_data.counts);
+    console.log(countsdata.count);
   }
+
   render() {
-    console.log(this.props.countreducer);
+    // console.log(api);
+    // console.log(this.props)
+    // console.log(this.props.countreducer);
+    // console.table(this.props.userdata.data);v
     return (
       <main className="login-page">
         <div className="login-container">
@@ -58,9 +70,11 @@ class Login extends Component {
               <label className="error-label" htmlFor="password">
                 username or password is incorrect
               </label>
-              <a className="forgot-button" href="#">
-                forgot password
-              </a>
+              <Link href="/">
+                <a className="forgot-button" href="#">
+                  forgot password
+                </a>
+              </Link>
               <button
                 className="signin-button"
                 type="button"
@@ -80,6 +94,7 @@ class Login extends Component {
 
 const mapStateToProps = (state) => ({
   countreducer: state.counts,
+  userdata: state.user,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -88,6 +103,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   handleBookDelete: () => {
     dispatch(dispatchDecrement());
+  },
+  handleBookLogin: (data) => {
+    dispatch(dispatchAuthentication(data));
   },
 });
 

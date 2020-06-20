@@ -4,6 +4,10 @@ import Head from 'next/head';
 import './../public/styles/main.scss';
 import { Provider } from 'react-redux';
 import withReduxStore from '../lib/with-redux-store';
+import { PersistGate } from 'redux-persist/integration/react';
+import configureStore from '../redux/persist';
+const { store, persistor } = configureStore();
+
 class MyApp extends App {
   render() {
     const { Component, pageProps, reduxStore } = this.props;
@@ -19,7 +23,9 @@ class MyApp extends App {
           />
         </Head>
         <Provider store={reduxStore}>
-          <Component {...pageProps} />
+          <PersistGate loading={null} persistor={persistor}>
+            <Component {...pageProps} />
+          </PersistGate>
         </Provider>
       </div>
     );
