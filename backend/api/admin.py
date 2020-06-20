@@ -25,7 +25,7 @@ class PositionAdmin(admin.ModelAdmin):
 
 
 class EmployeeAdmin(admin.ModelAdmin):
-    list_display = ('id', 'created_at', 'updated_at')
+    list_display = ('id','user', 'created_at', 'updated_at')
 
 
 class CategoryAdmin(admin.ModelAdmin):

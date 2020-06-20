@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee, faSign, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
@@ -6,39 +7,38 @@ const fetch = require('node-fetch');
 import { dispatchIncrement, dispatchDecrement, dispatchAuthentication } from '../redux/actions';
 import Link from 'next/link';
 import { headers, api, clientId, clientSecret } from './api';
+import Router from 'next/router';
 
 class Login extends Component {
-  componentDidMount() {
-    // const url = 'http://localhost:8000/o/token/';
-
-    const username = 'admin';
-    const password = '1234';
-
-    // let status;
-    fetch(api.get_token, {
-      method: 'POST',
-      headers,
-      body: `grant_type=password&username=${username}&password=${password}&client_id=${clientId}&client_secret=${clientSecret}`,
-    })
-      .then((res) =>
-        // console.log(res.status);
-        res.json()
-      )
-      .then((json) => {
-        console.table(json);
-        localStorage.setItem('access_token', json.access_token);
-        this.props.handleBookLogin(json);
-      });
-    const persist_data = JSON.parse(localStorage.getItem('persist:root'));
-    const countsdata = JSON.parse(persist_data.counts);
-    console.log(countsdata.count);
+  constructor(props) {
+    super(props);
+    this.state = { username: '', password: '', error: '' };
   }
 
+  login = async () => {
+    const { username, password } = this.state;
+    if (username !== '' && password !== '') {
+      const res = await fetch(api.get_token, {
+        method: 'POST',
+        headers,
+        body: `grant_type=password&username=${username}&password=${password}&client_id=${clientId}&client_secret=${clientSecret}`,
+      });
+      const data = await res.json();
+      if (res.status === 200) {
+        console.table(data);
+        this.setState({ error: '' });
+        this.props.handleLogin(json);
+        Router.push({ pathname: '/' });
+      } else {
+        this.setState({ error: 'Username or password is correct' });
+      }
+    } else {
+      this.setState({ error: 'Please input username or password' });
+    }
+  };
+
   render() {
-    // console.log(api);
-    // console.log(this.props)
-    // console.log(this.props.countreducer);
-    // console.table(this.props.userdata.data);v
+    const { username, password, error } = this.state;
     return (
       <main className="login-page">
         <div className="login-container">
@@ -59,17 +59,34 @@ class Login extends Component {
               </div>
               <div className="input">
                 <label htmlFor="">Username</label>
-                <input type="text" className="username" placeholder="username" />
+                <input
+                  type="text"
+                  className="username"
+                  placeholder="username"
+                  value={username}
+                  onChange={(e) => {
+                    this.setState({ username: e.target.value });
+                  }}
+                />
               </div>
 
               <div className="input">
                 <label htmlFor="">Password</label>
-                <input type="password" className="password" placeholder="password" />
+                <input
+                  type="password"
+                  className="password"
+                  placeholder="password"
+                  value={password}
+                  onChange={(e) => {
+                    this.setState({ password: e.target.value });
+                  }}
+                />
               </div>
-
-              <label className="error-label" htmlFor="password">
-                username or password is incorrect
-              </label>
+              {error !== '' ? (
+                <label className="error-label" htmlFor="password">
+                  {error}
+                </label>
+              ) : null}
               <Link href="/">
                 <a className="forgot-button" href="#">
                   forgot password
@@ -79,7 +96,8 @@ class Login extends Component {
                 className="signin-button"
                 type="button"
                 onClick={() => {
-                  this.props.handleBookSubmit();
+                  this.login();
+                  // this.props.handleBookSubmit();
                 }}
               >
                 sign in <FontAwesomeIcon icon={faSignInAlt} />
@@ -104,9 +122,29 @@ const mapDispatchToProps = (dispatch) => ({
   handleBookDelete: () => {
     dispatch(dispatchDecrement());
   },
-  handleBookLogin: (data) => {
+  handleLogin: (data) => {
     dispatch(dispatchAuthentication(data));
   },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
+
+// componentDidMount() {
+
+//   fetch(api.get_token, {
+//     method: 'POST',
+//     headers,
+//     body: `grant_type=password&username=${username}&password=${password}&client_id=${clientId}&client_secret=${clientSecret}`,
+//   })
+//     .then((res) =>
+//       res.json()
+//     )
+//     .then((json) => {
+//       console.table(json);
+//       localStorage.setItem('access_token', json.access_token);
+//       this.props.handleBookLogin(json);
+//     });
+//   const persistData = JSON.parse(localStorage.getItem('persist:root'));
+//   const countsdata = JSON.parse(persistData.counts);
+//   console.log(countsdata.count);
+// }
