@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee, faSign, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { connect } from 'react-redux';
 const fetch = require('node-fetch');
+import { dispatchIncrement, dispatchDecrement } from '../redux/actions';
 
-export default class Login extends Component {
+class Login extends Component {
   componentDidMount() {
     const url = 'http://localhost:8000/o/token/';
     const headers = {
@@ -24,6 +26,7 @@ export default class Login extends Component {
       });
   }
   render() {
+    console.log(this.props.countreducer);
     return (
       <main className="login-page">
         <div className="login-container">
@@ -58,7 +61,13 @@ export default class Login extends Component {
               <a className="forgot-button" href="#">
                 forgot password
               </a>
-              <button className="signin-button" type="button">
+              <button
+                className="signin-button"
+                type="button"
+                onClick={() => {
+                  this.props.handleBookSubmit();
+                }}
+              >
                 sign in <FontAwesomeIcon icon={faSignInAlt} />
               </button>
             </form>
@@ -68,3 +77,18 @@ export default class Login extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  countreducer: state.counts,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  handleBookSubmit: () => {
+    dispatch(dispatchIncrement());
+  },
+  handleBookDelete: () => {
+    dispatch(dispatchDecrement());
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
