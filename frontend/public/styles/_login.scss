@@ -8,8 +8,19 @@ $light: #ffffff;
 .login-page {
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(to right, #ffffff 0 40%, #606171 0 60%);
-  font-family: 'Source Code Pro', monospace;
+  // background: linear-gradient(to right, #ffffff 0 40%, #606171 0 60%);
+  font-family: 'Poppins', sans-serif;
+}
+
+.bg-top {
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+.bg-bottom {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
 }
 
 .login-container {
@@ -23,29 +34,49 @@ $light: #ffffff;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  
   border-radius: 8px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  width: 800px;
-  height: 500px;
+  // width: 800px;
+  // height: 500px;
+  // transform: translateX(0px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  &:hover {
+    // transform: translateX(2px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
 }
 
 .login-banner {
+  border: 1px solid #4240b3;
+  border-right: none;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff80 0% 0% no-repeat padding-box;
+  position: relative;
+  padding: 20px;
   // width: 60%;
-  background-image: url(https://sv1.picz.in.th/images/2020/06/06/qDGeTE.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
+  // background-image: url('/images/64644 (1).png');
+  // background-size: contain;
+  // background-repeat: no-repeat;
   // min-width: 500px;
 
   // min-height: 500px;
-  width: 60%;
+  // width: 60%;
   // height: 100%;
+  .bg-banner {
+    width: 100%;
+  }
   display: flex;
   justify-content: center;
   align-items: center;
   > .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: 76px;
     font-weight: bold;
     mix-blend-mode: difference;
@@ -57,10 +88,19 @@ $light: #ffffff;
 
 .form-container {
   display: flex;
-
-  width: 40%;
-  padding: 10px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  // width: 600px;
+  min-width: 350px;
+  // width: 40%;
+  padding: 20px;
+  // box-shadow: 0px 3px 6px #00000029;
   // min-width: 300px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  &:hover {
+    // transform: translateX(2px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
 }
 
 .login-form {
@@ -68,7 +108,9 @@ $light: #ffffff;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // width: 100%;
+  width: 100%;
+
+
   // min-width: 300px;
 
   > .header {
@@ -76,9 +118,10 @@ $light: #ffffff;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin: 10px;
     p {
-      font-size: 28px;
-      font-weight: 500;
+      font-size: 24px;
+      font-weight: 600;
     }
     .fa-sign-in-alt {
       width: 25px;
@@ -90,38 +133,49 @@ $light: #ffffff;
     width: 100%;
     position: relative;
     margin: 10px;
-    > label {
-      position: absolute;
-      background-color: #ffffff;
-      left: 5px;
-      top: -8px;
-    }
+
     > input {
+      font-size: 14px;
       padding: 10px;
       width: 100%;
+      border: none;
+      background: #f8f8f8 0% 0% no-repeat padding-box;
+      border-radius: 8px;
+      &:focus {
+        background-color: #f1f1f1;
+      }
     }
   }
   > .error-label {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    margin-top: 10px;
+    margin: 10px 0;
     background-color: $danger;
     color: white;
-    font-weight: bold;
+    font-weight: 600;
     border-radius: 8px;
     padding: 5px 10px;
     transform: translateX(0px);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-size: 14px;
   }
+}
+
+
+.btn-block{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px;
 }
 
 .forgot-button {
   color: $danger !important;
-  margin: 20px 0;
+  // margin: 20px 0;
   text-decoration: none !important;
   transform: translateX(0px);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   background-color: transparent;
-
+  font-size: 14px;
   &::after {
     margin-top: 5px;
     content: '';
@@ -144,14 +198,17 @@ $light: #ffffff;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  padding: 10px 20px;
-  font-size: 16px;
-  width: 100%;
+  padding: 8px 15px;
+  font-size: 14px;
+  // width: 100%;
   background-color: $success;
   color: white;
-  font-weight: bold;
+  font-weight: 600;
   border-radius: 8px;
   border: none;
+  background: #4240B3 0% 0% no-repeat padding-box;
+// box-shadow: 0px 3px 6px #00000029;
+// border-radius: 8px;
   outline: none !important;
   transform: translateX(0px);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -164,9 +221,9 @@ $light: #ffffff;
     transform: translateX(-2px);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   }
-  >.fa-sign-in-alt{
-    width: 20px;
-    height: 20px;
+  > .fa-sign-in-alt {
+    width: 15px;
+    height: 15px;
     margin-left: 10px;
   }
 }

@@ -26,8 +26,9 @@ class Login extends Component {
       const data = await res.json();
       if (res.status === 200) {
         console.table(data);
+        localStorage.setItem('access_token', data.access_token);
         this.setState({ error: '' });
-        this.props.handleLogin(json);
+        this.props.handleLogin(data);
         Router.push({ pathname: '/' });
       } else {
         this.setState({ error: 'Username or password is correct' });
@@ -41,24 +42,17 @@ class Login extends Component {
     const { username, password, error } = this.state;
     return (
       <main className="login-page">
+        <img className="bg-top" src="/images/Path 7.png" alt="" />
         <div className="login-container">
           <div className="login-banner">
-            <h1 className="text">
-              Inventory
-              <br />
-              Management
-              <br />
-              System
-            </h1>
+            <img className="bg-banner" src="/images/64644 (1).png" alt="" />
           </div>
           <div className="form-container">
             <form className="login-form">
               <div className="header">
                 <p>Login</p>
-                <FontAwesomeIcon icon={faSignInAlt} />
               </div>
               <div className="input">
-                <label htmlFor="">Username</label>
                 <input
                   type="text"
                   className="username"
@@ -71,7 +65,6 @@ class Login extends Component {
               </div>
 
               <div className="input">
-                <label htmlFor="">Password</label>
                 <input
                   type="password"
                   className="password"
@@ -87,24 +80,27 @@ class Login extends Component {
                   {error}
                 </label>
               ) : null}
-              <Link href="/">
-                <a className="forgot-button" href="#">
-                  forgot password
-                </a>
-              </Link>
-              <button
-                className="signin-button"
-                type="button"
-                onClick={() => {
-                  this.login();
-                  // this.props.handleBookSubmit();
-                }}
-              >
-                sign in <FontAwesomeIcon icon={faSignInAlt} />
-              </button>
+              <div className="btn-block">
+                <button
+                  className="signin-button"
+                  type="button"
+                  onClick={() => {
+                    this.login();
+                    // this.props.handleBookSubmit();
+                  }}
+                >
+                  Sign In <FontAwesomeIcon icon={faSignInAlt} />
+                </button>
+                <Link href="/">
+                  <a className="forgot-button" href="#">
+                    forgot password
+                  </a>
+                </Link>
+              </div>
             </form>
           </div>
         </div>
+        <img className="bg-bottom" src="/images/Path 6.png" alt="" />
       </main>
     );
   }
