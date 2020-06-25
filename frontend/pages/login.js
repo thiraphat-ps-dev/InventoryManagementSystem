@@ -75,11 +75,7 @@ class Login extends Component {
                   }}
                 />
               </div>
-              {error !== '' ? (
-                <label className="error-label" htmlFor="password">
-                  {error}
-                </label>
-              ) : null}
+           
               <div className="btn-block">
                 <button
                   className="signin-button"
@@ -97,6 +93,11 @@ class Login extends Component {
                   </a>
                 </Link>
               </div>
+              {error !== '' ? (
+                <label className="error-label" htmlFor="password">
+                  {error}
+                </label>
+              ) : null}
             </form>
           </div>
         </div>

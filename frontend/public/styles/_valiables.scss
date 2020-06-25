@@ -1,0 +1,69 @@
+$primary: #5957B9;
+$secondary: #888888;
+$lightsecondary: #e8e7ed;
+$success: #5cb85c;
+$danger: #d9534f;
+$light: #ffffff;
+
+%font-header {
+  font-size: 24px;
+}
+
+%font-text {
+  font-size: 14px;
+}
+%font-btn {
+  font-size: 14px;
+}
+
+%w-100 {
+  width: 100%;
+}
+%fw-600 {
+  font-weight: 600;
+}
+
+%pos-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+%flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+%flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+%shadow-low {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+%shadow-high {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+%transition-3 {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+%border-8 {
+  border-radius: 8px;
+}
+
+%ju-ai-c {
+  justify-content: center;
+  align-items: center;
+}
+
+%mg-10 {
+  margin: 10px;
+}
+
+%pd-20 {
+  padding: 20px;
+}
