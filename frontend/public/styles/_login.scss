@@ -43,6 +43,7 @@
   .bg-banner {
     @extend %w-100;
     min-width: 300px;
+    max-width: 400px;
   }
 }
 
@@ -185,7 +186,7 @@
     flex-direction: column;
   }
 
-  .login-banner{
+  .login-banner {
     border: 2px solid $primary;
     border-radius: 8px 8px 0 0;
   }
