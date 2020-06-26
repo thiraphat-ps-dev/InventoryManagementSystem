@@ -8,6 +8,7 @@ import { dispatchIncrement, dispatchDecrement, dispatchAuthentication } from '..
 import Link from 'next/link';
 import { headers, api, clientId, clientSecret } from './api';
 import Router from 'next/router';
+import Head from 'next/head'
 
 class Login extends Component {
   constructor(props) {
@@ -42,6 +43,10 @@ class Login extends Component {
     const { username, password, error } = this.state;
     return (
       <main className="login-page">
+        <Head>
+          <title>Login Page</title>
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        </Head>
         <img className="bg-top" src="/images/Path 7.png" alt="" />
         <div className="login-container">
           <div className="login-banner">
@@ -54,6 +59,7 @@ class Login extends Component {
               </div>
               <div className="input">
                 <input
+                  id='inputUsername'
                   type="text"
                   className="username"
                   placeholder="username"
@@ -66,6 +72,7 @@ class Login extends Component {
 
               <div className="input">
                 <input
+                  id='inputPassword'
                   type="password"
                   className="password"
                   placeholder="password"
@@ -80,6 +87,7 @@ class Login extends Component {
                 <button
                   className="signin-button"
                   type="button"
+                  id='btn-signin'
                   onClick={() => {
                     this.login();
                     // this.props.handleBookSubmit();
