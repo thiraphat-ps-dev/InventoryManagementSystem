@@ -1,2 +1,2 @@
-api: python backend/manage.py runserver
-web: cd frontend && npm run dev
+server: python3 -m venv ./venv && source venv/bin/activate && cd backend && pip install -r requirements.txt && python manage.py runserver
+web: cd frontend && npm i && npm run dev
