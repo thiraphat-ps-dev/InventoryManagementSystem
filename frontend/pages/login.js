@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee, faSign, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 const fetch = require('node-fetch');
 import { dispatchIncrement, dispatchDecrement, dispatchAuthentication } from '../redux/actions';
