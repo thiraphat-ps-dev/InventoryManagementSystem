@@ -1,2 +1,9 @@
 @import '_reset.scss';
 @import '_login.scss';
+@import '_navbar.scss';
+@import '_sidebar.scss';
+
+
+*,body {
+  font-family: 'Poppins', sans-serif;
+}

@@ -155,13 +155,13 @@
   outline: none !important;
   transform: translateY(0px);
   &:hover {
-    @extend %shadow-high;
-    transform: translateY(-3px);
-  }
-  &:active {
-    @extend %shadow-low;
-    transform: translateY(0px);
-  }
+    box-shadow: 0 5px 1px #3a3977;
+      transform: translateY(-5px);
+    }
+    &:active {
+      transform: translateY(0px);
+      box-shadow: 0 0 0 #3a3977;
+    }
   > .fa-sign-in-alt {
     width: 15px;
     height: 15px;

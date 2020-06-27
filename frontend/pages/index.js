@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Router from 'next/router';
+import Layout from '../components/layout';
 
 class index extends Component {
   componentDidMount() {
@@ -17,7 +18,9 @@ class index extends Component {
     console.table(this.props.userdata.data);
     return (
       <div>
-        <h1>index</h1>
+        <Layout title='InventoryManagementSystem'>
+          <h1>index</h1>
+        </Layout>
       </div>
     );
   }
