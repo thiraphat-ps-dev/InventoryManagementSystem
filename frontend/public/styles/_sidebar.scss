@@ -1,8 +1,9 @@
 .sidebar-container {
   position: fixed;
   top: 0;
-  display: flex;
-  flex-direction: row;
+  // display: flex;
+  // flex-direction: row;
+  @extend %flex-row;
   height: 100%;
   > .brand-container {
     background-color: #5957b9;
@@ -50,8 +51,9 @@
     > .user-container {
       min-height: 350px;
       padding: 20px;
-      display: flex;
-      flex-direction: column;
+      // display: flex;
+      // flex-direction: column;
+      @extend %flex-col;
       // justify-content: center;
       align-items: center;
       transition: all .5s;
@@ -79,8 +81,9 @@
 
     > .btn-container {
       width: 100%;
-      display: flex;
-      flex-direction: column;
+      // display: flex;
+      // flex-direction: column;
+      @extend %flex-col;
       button {
         cursor: pointer;
         width: 100%;
