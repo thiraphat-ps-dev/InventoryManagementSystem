@@ -1,14 +1,17 @@
 .nav-container {
-  display: flex;
-  flex-direction: row;
+  // display: flex;
+  // flex-direction: row;
+  @extend %flex-row;
   justify-content: space-between;
+  user-select: none;
   //   padding: 10px;
   @extend %pd-10;
 
   @extend %shadow-low;
   > .search-container {
-    display: flex;
-    flex-direction: row;
+    // display: flex;
+    // flex-direction: row;
+    @extend %flex-row;
     align-items: center;
     margin-left: 400px;
     .fa-search {
@@ -46,15 +49,16 @@
   }
   > .btn-signout {
     cursor: pointer;
-    display: flex;
-    flex-direction: row;
+    // display: flex;
+    // flex-direction: row;
+    @extend %flex-row;
     border: #5957b9 solid 2px;
     border-radius: 5px;
     padding: 5px 10px;
     background-color: transparent;
     align-items: center;
     outline: none;
-    color: #5957B9;
+    color: #5957b9;
     > .fa-sign-out-alt {
       width: 15px;
       height: 15px;

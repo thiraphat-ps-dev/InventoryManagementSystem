@@ -3,12 +3,13 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
-const fetch = require('node-fetch');
-import { dispatchIncrement, dispatchDecrement, dispatchAuthentication } from '../redux/actions';
 import Link from 'next/link';
-import { headers, api, clientId, clientSecret } from './api';
 import Router from 'next/router';
-import Head from 'next/head'
+import Head from 'next/head';
+import { dispatchIncrement, dispatchDecrement, dispatchAuthentication } from '../redux/actions';
+import { headers, api, clientId, clientSecret } from './api';
+
+const fetch = require('node-fetch');
 
 class Login extends Component {
   constructor(props) {
@@ -28,6 +29,7 @@ class Login extends Component {
       if (res.status === 200) {
         console.table(data);
         localStorage.setItem('access_token', data.access_token);
+        localStorage.setItem('sidebarShow', JSON.stringify(true));
         this.setState({ error: '' });
         this.props.handleLogin(data);
         Router.push({ pathname: '/' });
@@ -59,7 +61,7 @@ class Login extends Component {
               </div>
               <div className="input">
                 <input
-                  id='inputUsername'
+                  id="inputUsername"
                   type="text"
                   className="username"
                   placeholder="username"
@@ -72,7 +74,7 @@ class Login extends Component {
 
               <div className="input">
                 <input
-                  id='inputPassword'
+                  id="inputPassword"
                   type="password"
                   className="password"
                   placeholder="password"
@@ -82,12 +84,12 @@ class Login extends Component {
                   }}
                 />
               </div>
-           
+
               <div className="btn-block">
                 <button
                   className="signin-button"
                   type="button"
-                  id='btn-signin'
+                  id="btn-signin"
                   onClick={() => {
                     this.login();
                     // this.props.handleBookSubmit();
@@ -133,23 +135,3 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
-
-// componentDidMount() {
-
-//   fetch(api.get_token, {
-//     method: 'POST',
-//     headers,
-//     body: `grant_type=password&username=${username}&password=${password}&client_id=${clientId}&client_secret=${clientSecret}`,
-//   })
-//     .then((res) =>
-//       res.json()
-//     )
-//     .then((json) => {
-//       console.table(json);
-//       localStorage.setItem('access_token', json.access_token);
-//       this.props.handleBookLogin(json);
-//     });
-//   const persistData = JSON.parse(localStorage.getItem('persist:root'));
-//   const countsdata = JSON.parse(persistData.counts);
-//   console.log(countsdata.count);
-// }
