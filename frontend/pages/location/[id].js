@@ -1,14 +1,15 @@
 /* eslint-disable no-undef */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Layout from '../components/layout';
-import Dashboard from '../components/dashboard';
+import Layout from '../../components/layout';
 
-class index extends Component {
+class Item extends Component {
+
+
   render() {
     return (
       <Layout title="InventoryManagementSystem">
-        <Dashboard />
+        <h1>this item page 1</h1>
       </Layout>
     );
   }
@@ -19,4 +20,4 @@ const mapStateToProps = (state) => ({
   userdata: state.user,
 });
 
-export default connect(mapStateToProps, null)(index);
+export default connect(mapStateToProps, null)(Item);
