@@ -5,6 +5,7 @@
   // flex-direction: row;
   @extend %flex-row;
   height: 100%;
+  z-index: 10;
   > .brand-container {
     background-color: #5957b9;
     display: flex;
@@ -34,10 +35,9 @@
       .user-image {
         width: 100px !important;
         height: 100px !important;
-        transition: all .5s;
+        transition: all 0.5s;
       }
-      .btn-container {
-      }
+
       .user-container {
         transition: all 1s;
         p {
@@ -56,7 +56,7 @@
       @extend %flex-col;
       // justify-content: center;
       align-items: center;
-      transition: all .5s;
+      transition: all 0.5s;
       p {
         writing-mode: tb;
         transform: rotateZ(180deg) translateX(3px);
@@ -97,7 +97,9 @@
         color: #5957b9;
         align-items: center;
         justify-content: space-between;
+        @extend %transition-3;
         &.active {
+          @extend %transition-3;
           color: #fff;
           background-color: #5957b9;
           border-radius: 30px;
@@ -162,19 +164,11 @@
   }
 }
 
-
-
-
-
-
-
-
 // Extra large devices (large desktops)
 // No media query since the extra-large breakpoint has no upper bound on its width
 
 // Large devices (desktops, less than 1200px)
 @media (max-width: 1199.98px) {
-
 }
 
 // Medium devices (tablets, less than 992px)

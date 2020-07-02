@@ -1,4 +1,4 @@
-$primary: #5957B9;
+$primary: #5957b9;
 $secondary: #888888;
 $lightsecondary: #e8e7ed;
 $success: #5cb85c;
@@ -16,11 +16,26 @@ $light: #ffffff;
   font-size: 14px;
 }
 
-%w-100 {
+// witdh and height
+%w100 {
   width: 100%;
 }
-%fw-600 {
+
+%w100vw{
+  width: 100vw;
+}
+
+%h100vh{
+  height: 100vw;
+}
+
+%fw600 {
   font-weight: 600;
+}
+
+// position
+%posf{
+  position: fixed;
 }
 
 %pos-center {
@@ -51,23 +66,23 @@ $light: #ffffff;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-%border-8 {
+%bdrs8 {
   border-radius: 8px;
 }
 
-%ju-ai-c {
+%juc-aic {
   justify-content: center;
   align-items: center;
 }
 
-%mg-10 {
+%mg10 {
   margin: 10px;
 }
 
-%pd-20 {
+%pd20 {
   padding: 20px;
 }
 
-%pd-10{
+%pd10 {
   padding: 10px;
 }

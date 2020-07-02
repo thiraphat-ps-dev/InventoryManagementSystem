@@ -1,7 +1,8 @@
 .menuoverlay-container {
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
+  z-index: 10;
+  @extend %posf;
+  @extend %w100vw;
+  @extend %h100vh;
   background-color: white;
   opacity: 0;
   visibility: hidden;
@@ -15,8 +16,7 @@
 
     align-items: center;
     transition: all 0.5s;
-    p {
-    }
+
     > .user-image {
       width: 100px;
       height: 100px;
@@ -35,8 +35,6 @@
   }
   > .btn-container {
     width: 100%;
-    // display: flex;
-    // flex-direction: column;
     @extend %flex-col;
     button {
       cursor: pointer;

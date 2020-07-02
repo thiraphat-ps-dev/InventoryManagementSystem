@@ -1,12 +1,13 @@
-import App, { Container } from 'next/app';
+import App from 'next/app';
 import React from 'react';
 import Head from 'next/head';
-import './../public/styles/main.scss';
 import { Provider } from 'react-redux';
-import withReduxStore from '../lib/with-redux-store';
 import { PersistGate } from 'redux-persist/integration/react';
 import configureStore from '../redux/persist';
-const { store, persistor } = configureStore();
+import './../public/styles/main.scss';
+import withReduxStore from '../lib/with-redux-store';
+
+const { persistor } = configureStore();
 
 class MyApp extends App {
   render() {

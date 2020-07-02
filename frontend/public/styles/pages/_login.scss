@@ -1,4 +1,4 @@
-@import '_valiables.scss';
+@import '../_valiables.scss';
 
 .login-page {
   width: 100vw;
@@ -8,19 +8,19 @@
 }
 
 .bg-top {
-  @extend %w-100;
+  @extend %w100;
   position: absolute;
   top: 0;
 }
 .bg-bottom {
-  @extend %w-100;
+  @extend %w100;
   position: absolute;
   bottom: 0;
 }
 
 .login-container {
   @extend %pos-center;
-  @extend %border-8;
+  @extend %bdrs8;
   @extend %flex-row;
   @extend %shadow-low;
   @extend %transition-3;
@@ -33,16 +33,16 @@
 }
 
 .login-banner {
-  @extend %pd-20;
+  @extend %pd20;
   @extend %flex-col;
-  @extend %ju-ai-c;
+  @extend %juc-aic;
   border: 2px solid $primary;
   border-right: none;
   border-radius: 8px 0 0 8px;
   background: #ffffff80 0% 0% no-repeat padding-box;
   position: relative;
   .bg-banner {
-    @extend %w-100;
+    @extend %w100;
     min-width: 300px;
     max-width: 400px;
   }
@@ -50,7 +50,7 @@
 
 .form-container {
   @extend %flex-col;
-  @extend %pd-20;
+  @extend %pd20;
   @extend %shadow-low;
   @extend %transition-3;
   background: $light 0% 0% no-repeat padding-box;
@@ -64,15 +64,15 @@
 
 .login-form {
   @extend %flex-col;
-  @extend %ju-ai-c;
-  @extend %w-100;
+  @extend %juc-aic;
+  @extend %w100;
   > .header {
     @extend %flex-row;
-    @extend %ju-ai-c;
-    @extend %mg-10;
+    @extend %juc-aic;
+    @extend %mg10;
     p {
       @extend %font-header;
-      @extend %fw-600;
+      @extend %fw600;
     }
     .fa-sign-in-alt {
       width: 25px;
@@ -81,13 +81,13 @@
     }
   }
   > .input {
-    @extend %w-100;
-    @extend %mg-10;
+    @extend %w100;
+    @extend %mg10;
     position: relative;
     > input {
       @extend %font-text;
-      @extend %w-100;
-      @extend %border-8;
+      @extend %w100;
+      @extend %bdrs8;
       padding: 10px;
       border: none;
       background: #f8f8f8 0% 0% no-repeat padding-box;
@@ -98,8 +98,8 @@
   }
   > .error-label {
     @extend %shadow-low;
-    @extend %fw-600;
-    @extend %border-8;
+    @extend %fw600;
+    @extend %bdrs8;
     @extend %transition-3;
     @extend %font-text;
     margin: 10px 0;
@@ -112,7 +112,7 @@
 
 .btn-block {
   @extend %flex-row;
-  @extend %mg-10;
+  @extend %mg10;
   justify-content: space-between;
 }
 
@@ -135,15 +135,15 @@
   &:hover {
     transform: translateX(2px);
     &::after {
-      @extend %w-100;
+      @extend %w100;
     }
   }
 }
 .signin-button {
   @extend %flex-row;
-  @extend %ju-ai-c;
+  @extend %juc-aic;
   @extend %font-btn;
-  @extend %border-8;
+  @extend %bdrs8;
   cursor: pointer;
   @extend %shadow-low;
   @extend %transition-3;
@@ -157,12 +157,12 @@
   transform: translateY(0px);
   &:hover {
     box-shadow: 0 5px 1px #3a3977;
-      transform: translateY(-5px);
-    }
-    &:active {
-      transform: translateY(0px);
-      box-shadow: 0 0 0 #3a3977;
-    }
+    transform: translateY(-5px);
+  }
+  &:active {
+    transform: translateY(0px);
+    box-shadow: 0 0 0 #3a3977;
+  }
   > .fa-sign-in-alt {
     width: 15px;
     height: 15px;

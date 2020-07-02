@@ -1,0 +1,256 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: row;
+  //   padding: 20px;
+  padding: 20px;
+  > .left-content {
+    width: 70%;
+    // margin: 10px;
+
+    > .status-container {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 20px;
+      > .card {
+        width: 100%;
+        background-color: #ffffff;
+        @extend %shadow-low;
+        @extend %bdrs8;
+
+        &:nth-child(2) {
+          margin: 0 20px;
+        }
+        display: flex;
+        flex-direction: row;
+        > .icon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 20px;
+
+          > .fa-desktop,
+          .fa-check,
+          .fa-envelope {
+            width: 100%;
+            min-width: 50px;
+            height: 100%;
+            background-color: #f6f7ff;
+            color: #5957b9;
+          }
+        }
+        > .text {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 20px;
+          .text-header {
+            color: slategray;
+            margin-bottom: 10px;
+            font-size: 18px;
+          }
+          .text-number {
+            color: #000;
+            font-size: 44px;
+          }
+        }
+      }
+    }
+    > .statistics-container {
+      @extend %shadow-low;
+      display: flex;
+      flex-direction: column;
+      // padding: 10px;
+      height: 600px;
+      @extend %bdrs8;
+      background-color: #f6f7ff;
+      > .header {
+        @extend %shadow-low;
+        padding: 20px;
+        // margin: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        > h2 {
+          font-size: 24px;
+        }
+        > .select-div {
+          display: flex;
+          position: relative;
+          border-radius: 15px;
+          @extend %shadow-low;
+          > select {
+            border: none;
+            border-radius: 15px;
+            padding: 10px;
+            outline: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 100px;
+          }
+          > .fa-chevron-down {
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+  }
+  > .right-content {
+    width: 30%;
+    // margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+    > .conic-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @extend %shadow-low;
+      width: 100%;
+      flex-direction: column;
+      > .header {
+        @extend %shadow-low;
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+       width: 100%;
+       background-color: #f6f7ff;
+       margin-bottom: 20px;
+        > h2 {
+          font-size: 24px;
+        }
+      }
+      > .conic {
+        width: 250px;
+        height: 250px;
+
+        background: conic-gradient(#5957b9 40%, #86d354 0);
+        border-radius: 50%;
+        @extend %shadow-low;
+      }
+      > .text-label {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 20px 0;
+        width: 100%;
+        max-width: 400px;
+        > label {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          > .avaliable {
+            margin-right: 10px;
+            background-color: #86d354;
+
+            width: 20px;
+            height: 20px;
+            @extend %shadow-low;
+          }
+          > .notavaliable {
+            margin-right: 10px;
+            background-color: #5957b9;
+            width: 20px;
+            height: 20px;
+            @extend %shadow-low;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Extra large devices (large desktops)
+// No media query since the extra-large breakpoint has no upper bound on its width
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {
+  .dashboard-container {
+    flex-direction: column;
+    > .left-content {
+      width: 100%;
+    }
+    > .right-content {
+      width: 100%;
+      padding-top: 20px;
+      padding-left: 0;
+    }
+  }
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+  .dashboard-container {
+    > .left-content {
+      .status-container {
+        > .card {
+          > .icon {
+            padding: 10px;
+          }
+          > .text {
+            padding: 10px;
+            .text-header {
+              font-size: 14px;
+            }
+            .text-number {
+              font-size: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-banner {
+    border: 2px solid $primary;
+    border-radius: 8px 8px 0 0;
+  }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  .dashboard-container {
+    > .left-content {
+      .status-container {
+        flex-direction: column;
+        > .card {
+          padding: 10px;
+          &:nth-child(2) {
+            margin: 20px 0;
+          }
+          > .icon {
+            padding: 20px;
+          }
+          > .text {
+            padding: 20px;
+            .text-header {
+              font-size: 24px;
+            }
+            .text-number {
+              font-size: 54px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

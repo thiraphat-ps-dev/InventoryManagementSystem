@@ -1,9 +1,10 @@
 @import '_reset.scss';
-@import '_login.scss';
-@import '_navbar.scss';
-@import '_sidebar.scss';
-@import '_layout.scss';
-@import '_menuoverlay.scss';
+@import './pages/_login.scss';
+@import './pages/_dashboard.scss';
+@import './components/_navbar.scss';
+@import './components/_sidebar.scss';
+@import './components/_layout.scss';
+@import './components/_menuoverlay.scss';
 
 *,body {
   font-family: 'Poppins', sans-serif;

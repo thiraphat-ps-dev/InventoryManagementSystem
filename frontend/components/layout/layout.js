@@ -1,12 +1,18 @@
-import Link from 'next/link';
+/* eslint-disable no-undef */
+import React, { Component } from 'react';
 import Head from 'next/head';
+import Router from 'next/router';
 import Navbar from './navbar';
-import Sidebar from './sidebar';
-import Menuoverlay from './menuoverlay';
+import Sidebar from '../sidebar';
+import Menuoverlay from '../menu/menuOverlay';
 
-export default class Layout extends React.Component {
+export default class Layout extends Component {
   componentDidMount() {
-    console.log('mount');
+    console.log(localStorage.getItem('access_token'));
+    const checkLogin = localStorage.getItem('access_token');
+    if (checkLogin === 'undefined' || checkLogin === null) {
+      Router.push({ pathname: '/login' });
+    }
   }
   componentWillUnmount() {
     console.log('unmount');
