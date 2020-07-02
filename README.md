@@ -72,6 +72,13 @@ Client type : confidential
 Authorization Grant Type : password
 Redirect Urls : http://localhost:8000
 
+go to InventoryManagementSystem/frontend/pages/api/index.js to set you clientId and clientSecret
+```javascript
+export const clientId = 'your clientid';
+export const clientSecret = 'your clientsecret';
+```
+
+
 ### Setup Frontend Server
 go to frontend directory
 ```bash
