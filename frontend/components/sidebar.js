@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faImage, faLocationArrow, faReceipt, faHistory, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
@@ -12,7 +13,10 @@ class Sidebar extends Component {
     };
   }
   componentDidMount() {
-    this.setState({ toggle: JSON.parse(localStorage.getItem('sidebarShow')) });
+    const sidebarShow = JSON.parse(localStorage.getItem('sidebarShow'));
+    this.setState({ toggle: sidebarShow });
+    const content = document.querySelector('.content-container');
+    console.log('setContentPadLeft', sidebarShow ? content.classList.add('active') : content.classList.remove('active'));
   }
 
   render() {
@@ -57,6 +61,8 @@ class Sidebar extends Component {
               onClick={async () => {
                 await this.setState({ toggle: !this.state.toggle });
                 localStorage.setItem('sidebarShow', JSON.stringify(this.state.toggle));
+                const content = document.querySelector('.content-container');
+                console.log(this.state.toggle ? content.classList.add('active') : content.classList.remove('active'));
               }}
             >
               {this.state.toggle ? <FontAwesomeIcon icon={faChevronLeft} /> : <FontAwesomeIcon icon={faChevronRight} />}

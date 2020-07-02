@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import Navbar from './navbar';
 import Sidebar from './sidebar';
+import Menuoverlay from './menuoverlay';
 
 export default class Layout extends React.Component {
   componentDidMount() {
@@ -22,8 +23,8 @@ export default class Layout extends React.Component {
 
         <Navbar />
         <Sidebar />
-
-        {children}
+        <Menuoverlay />
+        <div className="content-container active">{children}</div>
       </div>
     );
   }
