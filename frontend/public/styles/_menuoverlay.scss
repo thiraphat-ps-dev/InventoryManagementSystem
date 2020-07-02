@@ -1,0 +1,143 @@
+.menuoverlay-container {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+  transition: opacity 600ms, visibility 600ms;
+  > .user-container {
+    min-height: 250px;
+    padding: 20px;
+
+    @extend %flex-col;
+
+    align-items: center;
+    transition: all 0.5s;
+    p {
+    }
+    > .user-image {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      transition: all 1s;
+    }
+    > .user-username {
+      margin: 10px;
+    }
+    > .user-role {
+      margin: 10px;
+    }
+    > .user-email {
+      margin: 10px;
+    }
+  }
+  > .btn-container {
+    width: 100%;
+    // display: flex;
+    // flex-direction: column;
+    @extend %flex-col;
+    button {
+      cursor: pointer;
+      width: 100%;
+      display: flex;
+      color: white;
+      background-color: #fff;
+      border: none;
+      outline: none;
+      padding: 10px 20px;
+      min-width: 200px;
+      color: #5957b9;
+      align-items: center;
+      justify-content: space-between;
+      &.active {
+        color: #fff;
+        background-color: #5957b9;
+        border-radius: 30px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+
+      @extend %transition-3;
+      transform: translateY(0px);
+      &:hover {
+        box-shadow: 0 5px 1px #3c3a7e;
+        transform: translateY(-5px);
+      }
+      &:active {
+        transform: translateY(0px);
+        box-shadow: 0 0 0 #5957b9;
+      }
+    }
+    .fa-home,
+    .fa-image,
+    .fa-location-arrow,
+    .fa-receipt,
+    .fa-history {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  > .signout-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    > .btn-signout {
+      cursor: pointer;
+
+      @extend %flex-row;
+      border: #5957b9 solid 2px;
+      border-radius: 5px;
+      padding: 5px 10px;
+      background-color: transparent;
+      align-items: center;
+      outline: none;
+      color: #5957b9;
+      > .fa-sign-out-alt {
+        width: 15px;
+        height: 15px;
+        margin-left: 10px;
+      }
+      @extend %shadow-low;
+      @extend %transition-3;
+      transform: translateY(0px);
+      &:hover {
+        box-shadow: 0 5px 1px #5957b9;
+        transform: translateY(-5px);
+      }
+      &:active {
+        transform: translateY(0px);
+        box-shadow: 0 0 0 #5957b9;
+      }
+    }
+  }
+}
+
+// Extra large devices (large desktops)
+// No media query since the extra-large breakpoint has no upper bound on its width
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+  .menuoverlay-container {
+    &.active {
+      visibility: visible;
+      opacity: 1;
+      display: block;
+    }
+  }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+}

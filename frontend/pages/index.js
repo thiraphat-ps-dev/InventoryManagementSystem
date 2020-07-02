@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Router from 'next/router';
 import Layout from '../components/layout';
+import Dashboard from '../components/dashboard';
 
 class index extends Component {
   componentDidMount() {
@@ -19,7 +20,7 @@ class index extends Component {
     return (
       <div>
         <Layout title='InventoryManagementSystem'>
-          <h1>index</h1>
+          <Dashboard />
         </Layout>
       </div>
     );
