@@ -3,8 +3,7 @@
   justify-content: space-between;
   user-select: none;
   padding-left: 300px;
-  @extend %pd-10;
- 
+  @extend %pd10;
 
   @extend %shadow-low;
   > .search-container {
@@ -81,7 +80,8 @@
     align-items: center;
     outline: none;
     color: #5957b9;
-    > .fa-bars,.fa-times {
+    > .fa-bars,
+    .fa-times {
       width: 20px;
       height: 20px;
     }

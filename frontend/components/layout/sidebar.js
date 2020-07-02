@@ -11,6 +11,7 @@ import {
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
+import Link from 'next/link';
 import { dispatchAuthentication } from '../../redux/actions';
 
 class Sidebar extends Component {
@@ -32,6 +33,7 @@ class Sidebar extends Component {
 
   render() {
     const { toggle } = this.state;
+    const menuActive = location.pathname;
     return (
       <aside className="sidebar-container">
         <div className="brand-container">
@@ -49,26 +51,36 @@ class Sidebar extends Component {
             <p className="user-email">Email@mail.com</p>
           </div>
           <div className="btn-container">
-            <button className="menu-item active">
-              <FontAwesomeIcon icon={faHome} />
-              <p>Home</p>
-            </button>
-            <button className="menu-item">
-              <FontAwesomeIcon icon={faImage} />
-              <p>Item</p>
-            </button>
-            <button className="menu-item">
-              <FontAwesomeIcon icon={faLocationArrow} />
-              <p>Location</p>
-            </button>
-            <button className="menu-item">
-              <FontAwesomeIcon icon={faReceipt} />
-              <p>Borrowing</p>
-            </button>
-            <button className="menu-item">
-              <FontAwesomeIcon icon={faHistory} />
-              <p>History</p>
-            </button>
+            <Link href="/">
+              <button className={`menu-item ${menuActive === '/' ? 'active' : ''}`}>
+                <FontAwesomeIcon icon={faHome} />
+                <p>Home</p>
+              </button>
+            </Link>
+            <Link href="/item">
+              <button className={`menu-item ${menuActive === '/item' ? 'active' : ''}`}>
+                <FontAwesomeIcon icon={faImage} />
+                <p>Item</p>
+              </button>
+            </Link>
+            <Link href="/location">
+              <button className={`menu-item ${menuActive === '/location' ? 'active' : ''}`}>
+                <FontAwesomeIcon icon={faLocationArrow} />
+                <p>Location</p>
+              </button>
+            </Link>
+            <Link href="/borrowing">
+              <button className={`menu-item ${menuActive === '/borrowing' ? 'active' : ''}`}>
+                <FontAwesomeIcon icon={faReceipt} />
+                <p>Borrowing</p>
+              </button>
+            </Link>
+            <Link href="/history">
+              <button className={`menu-item ${menuActive === '/history' ? 'active' : ''}`}>
+                <FontAwesomeIcon icon={faHistory} />
+                <p>History</p>
+              </button>
+            </Link>
           </div>
           <div className="toggle-container">
             <button

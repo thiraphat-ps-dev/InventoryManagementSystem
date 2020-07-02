@@ -5,6 +5,7 @@
   // flex-direction: row;
   @extend %flex-row;
   height: 100%;
+  z-index: 10;
   > .brand-container {
     background-color: #5957b9;
     display: flex;
@@ -96,7 +97,9 @@
         color: #5957b9;
         align-items: center;
         justify-content: space-between;
+        @extend %transition-3;
         &.active {
+          @extend %transition-3;
           color: #fff;
           background-color: #5957b9;
           border-radius: 30px;
