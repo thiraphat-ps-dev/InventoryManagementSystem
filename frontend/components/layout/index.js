@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Head from 'next/head';
 import Navbar from './navbar';
-import Sidebar from './sidebar';
-import Menuoverlay from './menuoverlay';
+import Sidebar from '../layout/sidebar';
+import Menuoverlay from '../menu/menuoverlay';
 
 export default class Layout extends Component {
   componentDidMount() {

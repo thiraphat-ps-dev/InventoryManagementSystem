@@ -34,10 +34,9 @@
       .user-image {
         width: 100px !important;
         height: 100px !important;
-        transition: all .5s;
+        transition: all 0.5s;
       }
-      .btn-container {
-      }
+
       .user-container {
         transition: all 1s;
         p {
@@ -56,7 +55,7 @@
       @extend %flex-col;
       // justify-content: center;
       align-items: center;
-      transition: all .5s;
+      transition: all 0.5s;
       p {
         writing-mode: tb;
         transform: rotateZ(180deg) translateX(3px);
@@ -162,19 +161,11 @@
   }
 }
 
-
-
-
-
-
-
-
 // Extra large devices (large desktops)
 // No media query since the extra-large breakpoint has no upper bound on its width
 
 // Large devices (desktops, less than 1200px)
 @media (max-width: 1199.98px) {
-
 }
 
 // Medium devices (tablets, less than 992px)

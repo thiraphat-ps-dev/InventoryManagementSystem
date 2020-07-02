@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faSignOutAlt, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Router from 'next/router';
 import { connect } from 'react-redux';
-import { dispatchAuthentication } from '../redux/actions';
+import { dispatchAuthentication } from '../../redux/actions';
 
 class Navbar extends Component {
   constructor(props) {

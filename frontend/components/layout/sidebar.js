@@ -1,9 +1,17 @@
 /* eslint-disable no-undef */
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faImage, faLocationArrow, faReceipt, faHistory, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { dispatchAuthentication } from '../redux/actions';
+import {
+  faHome,
+  faImage,
+  faLocationArrow,
+  faReceipt,
+  faHistory,
+  faChevronLeft,
+  faChevronRight,
+} from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
+import { dispatchAuthentication } from '../../redux/actions';
 
 class Sidebar extends Component {
   constructor(props) {
@@ -16,7 +24,10 @@ class Sidebar extends Component {
     const sidebarShow = JSON.parse(localStorage.getItem('sidebarShow'));
     this.setState({ toggle: sidebarShow });
     const content = document.querySelector('.content-container');
-    console.log('setContentPadLeft', sidebarShow ? content.classList.add('active') : content.classList.remove('active'));
+    console.log(
+      'setContentPadLeft',
+      sidebarShow ? content.classList.add('active') : content.classList.remove('active')
+    );
   }
 
   render() {
@@ -28,7 +39,11 @@ class Sidebar extends Component {
         </div>
         <nav className={`menu-container ${toggle ? 'active' : ''}`}>
           <div className="user-container">
-            <img className="user-image" src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png" />
+            <img
+              alt=""
+              className="user-image"
+              src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
+            />
             <p className="user-username">Username</p>
             <p className="user-role">Admin</p>
             <p className="user-email">Email@mail.com</p>
@@ -62,10 +77,18 @@ class Sidebar extends Component {
                 await this.setState({ toggle: !this.state.toggle });
                 localStorage.setItem('sidebarShow', JSON.stringify(this.state.toggle));
                 const content = document.querySelector('.content-container');
-                console.log(this.state.toggle ? content.classList.add('active') : content.classList.remove('active'));
+                console.log(
+                  this.state.toggle
+                    ? content.classList.add('active')
+                    : content.classList.remove('active')
+                );
               }}
             >
-              {this.state.toggle ? <FontAwesomeIcon icon={faChevronLeft} /> : <FontAwesomeIcon icon={faChevronRight} />}
+              {this.state.toggle ? (
+                <FontAwesomeIcon icon={faChevronLeft} />
+              ) : (
+                <FontAwesomeIcon icon={faChevronRight} />
+              )}
             </button>
           </div>
         </nav>
