@@ -1,13 +1,24 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faImage, faLocationArrow, faReceipt, faHistory, faSignOutAlt, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import {
+  faHome,
+  faImage,
+  faLocationArrow,
+  faReceipt,
+  faHistory,
+  faSignOutAlt,
+} from '@fortawesome/free-solid-svg-icons';
 
 export default class Menuoverlay extends Component {
   render() {
     return (
       <div className="menuoverlay-container">
         <div className="user-container">
-          <img className="user-image" src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png" />
+          <img
+            alt=""
+            className="user-image"
+            src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
+          />
           <p className="user-username">Username</p>
           <p className="user-role">Admin</p>
           <p className="user-email">Email@mail.com</p>

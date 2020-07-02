@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable no-undef */
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -98,7 +99,7 @@ class Login extends Component {
                   Sign In <FontAwesomeIcon icon={faSignInAlt} />
                 </button>
                 <Link href="/">
-                  <a className="forgot-button" href="#">
+                  <a className="forgot-button" href="www.google.com">
                     forgot password
                   </a>
                 </Link>

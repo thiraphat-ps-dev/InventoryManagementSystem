@@ -1,10 +1,10 @@
-import Link from 'next/link';
+import React, { Component } from 'react';
 import Head from 'next/head';
 import Navbar from './navbar';
 import Sidebar from './sidebar';
 import Menuoverlay from './menuoverlay';
 
-export default class Layout extends React.Component {
+export default class Layout extends Component {
   componentDidMount() {
     console.log('mount');
   }

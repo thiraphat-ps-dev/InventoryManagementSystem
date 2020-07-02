@@ -1,9 +1,10 @@
+/* eslint-disable no-undef */
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSignInAlt, faSearch, faSignOutAlt, faHamburger, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faSignOutAlt, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Router from 'next/router';
-import { dispatchAuthentication } from '../redux/actions';
 import { connect } from 'react-redux';
+import { dispatchAuthentication } from '../redux/actions';
 
 class Navbar extends Component {
   constructor(props) {
@@ -39,11 +40,17 @@ class Navbar extends Component {
           onClick={() => {
             this.setState({ menuShow: !this.state.menuShow });
             const menu = document.querySelector('.menuoverlay-container');
-            console.log('setContentPadLeft', !this.state.menuShow ? menu.classList.add('active') : menu.classList.remove('active'));
-          
+            console.log(
+              'setContentPadLeft',
+              !this.state.menuShow ? menu.classList.add('active') : menu.classList.remove('active')
+            );
           }}
         >
-          {this.state.menuShow ? <FontAwesomeIcon icon={faTimes} /> : <FontAwesomeIcon icon={faBars} />}
+          {this.state.menuShow ? (
+            <FontAwesomeIcon icon={faTimes} />
+          ) : (
+            <FontAwesomeIcon icon={faBars} />
+          )}
         </button>
       </nav>
     );
