@@ -6,6 +6,7 @@
   @extend %flex-row;
   height: 100%;
   z-index: 10;
+  transition: all .5s linear;
   > .brand-container {
     background-color: #5957b9;
     display: flex;
@@ -18,6 +19,7 @@
       color: white;
       font-weight: 500;
       font-size: 34px;
+      width: 60px;
     }
   }
   > .menu-container {
@@ -25,21 +27,21 @@
     // @extend %shadow-high;
     box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.25);
     max-width: 60px;
-    transition: all 1s;
+    transition: all .5s linear;
     overflow: hidden;
     &.active {
       //   max-width: none;
-      transition: max-width 1s;
+      transition: all .5s linear;
       max-width: 100%;
-
+    
       .user-image {
         width: 100px !important;
         height: 100px !important;
-        transition: all 0.5s;
+        transition: all .5s linear;
       }
 
       .user-container {
-        transition: all 1s;
+        transition: all .5s linear;
         p {
           writing-mode: unset;
           transform: unset;
@@ -56,7 +58,7 @@
       @extend %flex-col;
       // justify-content: center;
       align-items: center;
-      transition: all 0.5s;
+      transition: all .5s linear;
       p {
         writing-mode: tb;
         transform: rotateZ(180deg) translateX(3px);
@@ -65,7 +67,7 @@
         width: 40px;
         height: 40px;
         margin: 10px;
-        transition: all 1s;
+        transition: all .5s linear;
       }
       > .user-username {
         margin: 10px;
@@ -107,7 +109,7 @@
           border-bottom-left-radius: 0;
         }
 
-        @extend %transition-3;
+        // @extend %transition-3;
         transform: translateY(0px);
         &:hover {
           box-shadow: 0 5px 1px #3c3a7e;
@@ -142,6 +144,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        @extend %transition-3;
         .fa-chevron-left,
         .fa-chevron-right {
           width: 20px;
@@ -149,13 +152,15 @@
           color: white;
         }
 
-        @extend %transition-3;
+        // @extend %transition-3;
         transform: translateY(0px);
         &:hover {
           box-shadow: 0 5px 1px #3c3a7e;
           transform: translateY(-5px);
+          @extend %transition-3;
         }
         &:active {
+          @extend %transition-3;
           transform: translateY(0px);
           box-shadow: 0 0 0 #5957b9;
         }

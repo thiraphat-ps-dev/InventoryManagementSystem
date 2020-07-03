@@ -4,7 +4,10 @@
   user-select: none;
   padding-left: 300px;
   @extend %pd10;
-
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  background-color: #FFFFFF;
   @extend %shadow-low;
   > .search-container {
     @extend %flex-row;
