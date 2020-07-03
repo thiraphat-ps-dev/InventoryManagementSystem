@@ -1,11 +1,12 @@
 .nav-container {
+  z-index: 11;
   @extend %flex-row;
   justify-content: space-between;
   user-select: none;
   padding-left: 300px;
   @extend %pd10;
   position: fixed;
-  z-index: 10;
+
   width: 100%;
   background-color: #FFFFFF;
   @extend %shadow-low;
@@ -73,6 +74,7 @@
     }
   }
   > .btn-menu {
+    
     cursor: pointer;
     display: none;
     @extend %flex-row;

@@ -21,11 +21,15 @@ $light: #ffffff;
   width: 100%;
 }
 
-%w100vw{
-  width: 100vw;
+%h100{
+  height: 100%;
 }
 
-%h100vh{
+%w100vw {
+  width: 100%;
+}
+
+%h100vh {
   height: 100vw;
 }
 
@@ -34,7 +38,7 @@ $light: #ffffff;
 }
 
 // position
-%posf{
+%posf {
   position: fixed;
 }
 
@@ -70,11 +74,6 @@ $light: #ffffff;
   border-radius: 8px;
 }
 
-%juc-aic {
-  justify-content: center;
-  align-items: center;
-}
-
 %mg10 {
   margin: 10px;
 }
@@ -85,4 +84,34 @@ $light: #ffffff;
 
 %pd10 {
   padding: 10px;
+}
+
+// icon size
+%icon20 {
+  width: 20px;
+  height: 20px;
+}
+
+%icon15 {
+  width: 15px;
+  height: 15px;
+}
+
+// border outline
+%bdn-oln {
+  border: none;
+  outline: none;
+}
+
+// align
+%jcc-aic {
+  justify-content: center;
+  align-items: center;
+}
+
+%aic {
+  align-items: center;
+}
+%jcsb {
+  justify-content: space-between;
 }

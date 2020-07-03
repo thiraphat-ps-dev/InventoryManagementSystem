@@ -35,7 +35,7 @@
 .login-banner {
   @extend %pd20;
   @extend %flex-col;
-  @extend %juc-aic;
+  @extend %jcc-aic;
   border: 2px solid $primary;
   border-right: none;
   border-radius: 8px 0 0 8px;
@@ -64,11 +64,11 @@
 
 .login-form {
   @extend %flex-col;
-  @extend %juc-aic;
+  @extend %jcc-aic;
   @extend %w100;
   > .header {
     @extend %flex-row;
-    @extend %juc-aic;
+    @extend %jcc-aic;
     @extend %mg10;
     p {
       @extend %font-header;
@@ -141,7 +141,7 @@
 }
 .signin-button {
   @extend %flex-row;
-  @extend %juc-aic;
+  @extend %jcc-aic;
   @extend %font-btn;
   @extend %bdrs8;
   cursor: pointer;
