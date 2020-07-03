@@ -85,6 +85,11 @@ go to frontend directory
 $ cd frontend
 ```
 
+install dependencies
+```bash
+$ npm install
+```
+
 start server http://localhost:3000/
 ```bash
 $ npm run dev

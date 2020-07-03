@@ -1,12 +1,14 @@
 .content-container {
   padding-left: 120px;
-  transition: all 1.25s;
+  padding-top: 60px;
+  transition: all .6s linear;
+  
   &.active {
-    transition: all .5s;
+    transition: all .3s linear;
+    
     padding-left: 260px;
   }
 }
-
 
 // Extra large devices (large desktops)
 // No media query since the extra-large breakpoint has no upper bound on its width
@@ -21,14 +23,14 @@
 
 // Small devices (landscape phones, less than 768px)
 @media (max-width: 767.98px) {
-    .content-container {
-        padding-left: 0;
-        transition: all 1.25s;
-        &.active {
-          transition: all .5s;
-          padding-left: 0;
-        }
-      }
+  .content-container {
+    padding-left: 0;
+    transition: all 1.25s;
+    &.active {
+      transition: all 0.5s;
+      padding-left: 0;
+    }
+  }
 }
 
 // Extra small devices (portrait phones, less than 576px)
