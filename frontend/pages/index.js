@@ -16,6 +16,9 @@ class index extends Component {
       options: {
         chart: {
           id: 'basic-bar',
+          toolbar: {
+            show: false,
+          },
         },
         xaxis: {
           categories: [
@@ -51,6 +54,12 @@ class index extends Component {
       optionsd: {
         chart: {
           type: 'donut',
+          // height: '100%',
+          // width: '100px',
+          
+        },
+        legend: {
+          position: 'top',
         },
         labels: ['Avaliable', 'Not Avaliable'],
         colors: ['#5cb85c', '#5957b9'],
@@ -107,7 +116,7 @@ class index extends Component {
             </div>
             <div className="statistics-container">
               <div className="header">
-                <h2>Statistics</h2>
+                <h2>Borrowing statistics</h2>
                 <div className="select-div">
                   <select name="" id="">
                     <option value="year" selected>
@@ -137,7 +146,8 @@ class index extends Component {
                 options={this.state.optionsd}
                 series={this.state.seriesd}
                 type="donut"
-                width="100%"
+                // width="1000"
+                height="100%"
               />
             </div>
           </div>
