@@ -61,7 +61,7 @@
       display: flex;
       flex-direction: column;
       // padding: 10px;
-      height: 1600px;
+      // height: 1600px;
       @extend %bdrs8;
       background-color: #f6f7ff;
       > .header {
@@ -72,6 +72,7 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        margin-bottom: 10px;
         > h2 {
           font-size: 24px;
         }
@@ -117,6 +118,7 @@
       @extend %shadow-low;
       width: 100%;
       flex-direction: column;
+      
       > .header {
         @extend %shadow-low;
         padding: 20px;
@@ -131,43 +133,8 @@
           font-size: 24px;
         }
       }
-      > .conic {
-        width: 250px;
-        height: 250px;
-
-        background: conic-gradient(#5957b9 40%, #86d354 0);
-        border-radius: 50%;
-        @extend %shadow-low;
-      }
-      > .text-label {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        padding: 20px 0;
-        width: 100%;
-        max-width: 400px;
-        > label {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-
-          > .avaliable {
-            margin-right: 10px;
-            background-color: #86d354;
-
-            width: 20px;
-            height: 20px;
-            @extend %shadow-low;
-          }
-          > .notavaliable {
-            margin-right: 10px;
-            background-color: #5957b9;
-            width: 20px;
-            height: 20px;
-            @extend %shadow-low;
-          }
-        }
-      }
+      
+     
     }
   }
 }

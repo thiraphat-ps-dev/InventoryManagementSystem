@@ -1,8 +1,9 @@
 .menuoverlay-container {
   z-index: 10;
+  margin-top: 58px;
   @extend %posf;
-  @extend %w100vw;
-  @extend %h100vh;
+  @extend %w100;
+  @extend %h100;
   background-color: white;
   opacity: 0;
   visibility: hidden;
@@ -11,39 +12,35 @@
   > .user-container {
     min-height: 250px;
     padding: 20px;
-
     @extend %flex-col;
-
     align-items: center;
     transition: all 0.5s;
-
     > .user-image {
       width: 100px;
       height: 100px;
-      margin: 10px;
+      @extend %mg10;
       transition: all 1s;
     }
     > .user-username {
-      margin: 10px;
+      @extend %mg10;
     }
     > .user-role {
-      margin: 10px;
+      @extend %mg10;
     }
     > .user-email {
-      margin: 10px;
+      @extend %mg10;
     }
   }
   > .btn-container {
-    width: 100%;
+    @extend %w100;
     @extend %flex-col;
     button {
       cursor: pointer;
-      width: 100%;
-      display: flex;
+      @extend %w100;
+      @extend %flex-row;
       color: white;
       background-color: #fff;
-      border: none;
-      outline: none;
+      @extend %bdn-oln;
       padding: 10px 20px;
       min-width: 200px;
       color: #5957b9;
@@ -73,15 +70,13 @@
     .fa-location-arrow,
     .fa-receipt,
     .fa-history {
-      width: 20px;
-      height: 20px;
+   
+      @extend %icon20;
     }
   }
   > .signout-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @extend %flex-col;
+    @extend %jcc-aic;
     margin-top: 50px;
     > .btn-signout {
       cursor: pointer;
@@ -95,8 +90,7 @@
       outline: none;
       color: #5957b9;
       > .fa-sign-out-alt {
-        width: 15px;
-        height: 15px;
+        @extend %icon15;
         margin-left: 10px;
       }
       @extend %shadow-low;

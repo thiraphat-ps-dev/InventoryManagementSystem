@@ -3,12 +3,83 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faDesktop, faCheck, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-
+// import Chart from 'react-apexcharts';
+import dynamic from 'next/dynamic';
+const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 import Layout from '../components/layout';
 
 class index extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      options: {
+        chart: {
+          id: 'basic-bar',
+          toolbar: {
+            show: false,
+          },
+        },
+        xaxis: {
+          categories: [
+            'Jan.',
+            'Feb.',
+            'Mar.',
+            'Apr.',
+            'May.',
+            'Jun.',
+            'Jul.',
+            'Aug.',
+            'Sep.',
+            'Oct.',
+            'Nov.',
+            'Dec.',
+          ],
+        },
+        theme: {
+          palette: 'palette1',
+        },
+        stroke: {
+          curve: 'stepline',
+        },
+        colors: ['#5957b9'],
+      },
+      series: [
+        {
+          name: 'Series 1',
+          data: [45, 52, 38, 45, 19, 33, 45, 52, 38, 45, 19, 33],
+        },
+      ],
+      seriesd: [45, 55],
+      optionsd: {
+        chart: {
+          type: 'donut',
+          // height: '100%',
+          // width: '100px',
+          
+        },
+        legend: {
+          position: 'top',
+        },
+        labels: ['Avaliable', 'Not Avaliable'],
+        colors: ['#5cb85c', '#5957b9'],
+        responsive: [
+          {
+            breakpoint: 480,
+            options: {
+              chart: {
+                width: 200,
+              },
+              legend: {
+                position: 'bottom',
+              },
+            },
+          },
+        ],
+      },
+    };
+  }
   render() {
-    const data = [12, 19, 3, 5, 2, 3];
     return (
       <Layout title="InventoryManagementSystem">
         <div className="dashboard-container">
@@ -45,7 +116,7 @@ class index extends Component {
             </div>
             <div className="statistics-container">
               <div className="header">
-                <h2>Statistics</h2>
+                <h2>Borrowing statistics</h2>
                 <div className="select-div">
                   <select name="" id="">
                     <option value="year" selected>
@@ -57,7 +128,13 @@ class index extends Component {
                   <FontAwesomeIcon icon={faChevronDown} />
                 </div>
               </div>
-              <div className="bar" />
+              <Chart
+                options={this.state.options}
+                series={this.state.series}
+                themes={this.state.theme}
+                type="line"
+                width="100%"
+              />
             </div>
           </div>
           <div className="right-content">
@@ -65,18 +142,13 @@ class index extends Component {
               <div className="header">
                 <h2>Items in stock</h2>
               </div>
-              <div className="conic" />
-              <div className="text-label">
-                <label htmlFor="">
-                  <div className="avaliable" />
-                  <p>Avaliable</p>
-                </label>
-
-                <label htmlFor="">
-                  <div className="notavaliable" />
-                  <p>Not Avaliable</p>
-                </label>
-              </div>
+              <Chart
+                options={this.state.optionsd}
+                series={this.state.seriesd}
+                type="donut"
+                // width="1000"
+                height="100%"
+              />
             </div>
           </div>
         </div>
