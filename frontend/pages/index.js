@@ -282,7 +282,7 @@ class index extends Component {
               <ul className="item-list">
                 {_.map(lastitemlist.reverse(), (item, i) => {
                   return (
-                    <li>
+                    <li key={i}>
                       <img src={item.image} alt="" srcset="" />
                       <div className="text">
                         <p>Name : {item.name}</p>
@@ -306,7 +306,7 @@ class index extends Component {
               <ul className="item-list">
                 {_.map(lastitemlist.reverse(), (item, i) => {
                   return (
-                    <li>
+                    <li key={i}>
                       <img src={item.image} alt="" srcset="" />
                       <div className="text">
                         <p>Name : {item.name}</p>
