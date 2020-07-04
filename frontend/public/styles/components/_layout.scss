@@ -1,12 +1,12 @@
 .content-container {
-  padding-left: 120px;
-  padding-top: 60px;
+  padding-left: 116px;
+  padding-top: 56px;
   transition: all .6s linear;
   
   &.active {
     transition: all .3s linear;
     
-    padding-left: 260px;
+    padding-left: 256px;
   }
 }
 

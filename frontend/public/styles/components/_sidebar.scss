@@ -99,6 +99,7 @@
         align-items: center;
         justify-content: space-between;
         @extend %transition-3;
+        
         &.active {
           @extend %transition-3;
           color: #fff;
@@ -106,6 +107,7 @@
           border-radius: 30px;
           border-top-left-radius: 0;
           border-bottom-left-radius: 0;
+          
         }
 
         @extend %transition-3;
@@ -129,11 +131,13 @@
       }
     }
     > .toggle-container {
+      
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 20px;
       button {
+        
         cursor: pointer;
         border-radius: 50%;
         background-color: #5957b9;
