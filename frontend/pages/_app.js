@@ -22,7 +22,7 @@ class MyApp extends App {
             integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
             crossOrigin="anonymous"
           />
-          <script src="/frontend/public/js/smoothscroll.min.js"></script>
+          <script src="js/smoothscroll.min.js"></script>
         </Head>
         <Provider store={reduxStore}>
           <PersistGate loading={null} persistor={persistor}>
