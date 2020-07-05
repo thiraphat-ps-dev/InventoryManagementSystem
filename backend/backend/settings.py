@@ -127,6 +127,11 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
 
 OAUTH2_PROVIDER = {
     # this is the list of available scopes
@@ -151,3 +156,6 @@ CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
     'https://localhost:3000',
 )
+
+
+ALLOWED_HOSTS = ['ivms-inventory.herokuapp.com', '127.0.0.1:8000']

@@ -10,6 +10,12 @@
   width: 100%;
   background-color: #FFFFFF;
   @extend %shadow-low;
+
+  >.text-header{
+    align-items: center;
+    display: none;
+  }
+
   > .search-container {
     @extend %flex-row;
     align-items: center;
@@ -119,7 +125,13 @@
 @media (max-width: 767.98px) {
   .nav-container {
     padding-left: 0;
-    justify-content: flex-end;
+    
+    >.text-header{
+      margin-left: 10px;  
+      display: flex;
+      font-size: 16px;
+      font-weight: 500;
+    }
     > .search-container,
     .btn-signout {
       display: none;

@@ -32,14 +32,14 @@ class Sidebar extends Component {
   }
 
   render() {
-    const { toggle } = this.state;
+    // const { toggle } = this.state;
     const menuActive = location.pathname;
     return (
       <aside className="sidebar-container">
         <div className="brand-container">
           <h1>InventoryManagementSystem</h1>
         </div>
-        <nav className={`menu-container ${toggle ? 'active' : ''}`}>
+        <nav className={`menu-container ${this.state.toggle ? 'active' : ''}`}>
           <div className="user-container">
             <img
               alt=""

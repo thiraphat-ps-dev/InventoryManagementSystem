@@ -35,7 +35,7 @@ class Login extends Component {
         this.props.handleLogin(data);
         Router.push({ pathname: '/' });
       } else {
-        this.setState({ error: 'Username or password is not correct' });
+        this.setState({ error: 'Username or password is incorrect' });
       }
     } else {
       this.setState({ error: 'Please input username or password' });

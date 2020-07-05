@@ -40,7 +40,7 @@ TestLoginFaild IfUsernameOrPasswordIsCorrect
     Input Text                  id:inputUsername                     username
     Input Text                  id:inputPassword                     password
     ClickButtonSignin
-    Wait Until Page Contains              Username or password is correct
+    Wait Until Page Contains              Username or password is incorrect
 
 TestLoginSuccess
     OpenLoginPage

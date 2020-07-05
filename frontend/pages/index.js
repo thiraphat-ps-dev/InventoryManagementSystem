@@ -2,18 +2,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faChevronDown,
-  faDesktop,
-  faCheck,
-  faEnvelope,
-  faCheckSquare,
-} from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faDesktop, faCheck, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 // import Chart from 'react-apexcharts';
 import _ from 'lodash';
 import dynamic from 'next/dynamic';
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 import Layout from '../components/layout';
+import TableItem from '../components/table/tableitem';
 
 class index extends Component {
   constructor(props) {
@@ -145,7 +140,7 @@ class index extends Component {
           'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
         location: 'One Building',
         status: 'Avaliable',
-        created_date: '20/20/2020',
+        created_at: '20/20/2020',
       },
       {
         id: 2,
@@ -154,7 +149,7 @@ class index extends Component {
           'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
         location: 'One Building',
         status: 'Avaliable',
-        created_date: '20/20/2020',
+        created_at: '20/20/2020',
       },
       {
         id: 3,
@@ -163,7 +158,7 @@ class index extends Component {
           'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
         location: 'One Building',
         status: 'Avaliable',
-        created_date: '20/20/2020',
+        created_at: '20/20/2020',
       },
       {
         id: 4,
@@ -172,7 +167,7 @@ class index extends Component {
           'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
         location: 'One Building',
         status: 'Avaliable',
-        created_date: '20/20/2020',
+        created_at: '20/20/2020',
       },
       {
         id: 5,
@@ -181,7 +176,7 @@ class index extends Component {
           'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
         location: 'One Building',
         status: 'Not Avaliable',
-        created_date: '20/20/2020',
+        created_at: '20/20/2020',
       },
     ];
     console.table(lastitemlist);
@@ -261,6 +256,7 @@ class index extends Component {
                 width="100%"
               />
             </div>
+            <TableItem />
           </div>
           <div className="right-content">
             <div className="conic-container">
@@ -271,22 +267,21 @@ class index extends Component {
                 options={this.state.optionsd}
                 series={this.state.seriesd}
                 type="donut"
-                // width="1000"
                 height="100%"
               />
             </div>
             <div className="last-itemlist">
               <div className="header">
-                <h2>Last item add</h2>
+                <h2>Last add</h2>
               </div>
               <ul className="item-list">
                 {_.map(lastitemlist.reverse(), (item, i) => {
                   return (
                     <li key={i}>
-                      <img src={item.image} alt="" srcset="" />
+                      <img src={item.image} alt="" />
                       <div className="text">
                         <p>Name : {item.name}</p>
-                        <p>CreateDate : {item.created_date}</p>
+                        <p>CreateDate : {item.created_at}</p>
                       </div>
                       <div
                         className={`status ${item.status === 'Avaliable' ? 'ready' : 'notready'}`}
@@ -301,13 +296,13 @@ class index extends Component {
 
             <div className="last-itemlist">
               <div className="header">
-                <h2>Last item request</h2>
+                <h2>Last request</h2>
               </div>
               <ul className="item-list">
                 {_.map(lastitemlist.reverse(), (item, i) => {
                   return (
                     <li key={i}>
-                      <img src={item.image} alt="" srcset="" />
+                      <img src={item.image} alt="" />
                       <div className="text">
                         <p>Name : {item.name}</p>
                         <p>CreateDate : {item.created_date}</p>

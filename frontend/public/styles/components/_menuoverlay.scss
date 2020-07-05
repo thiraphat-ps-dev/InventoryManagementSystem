@@ -1,7 +1,12 @@
 .menuoverlay-container {
   z-index: 10;
   margin-top: 58px;
-  @extend %posf;
+  // @extend %posf;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top:0;
+  left:0;
   @extend %w100;
   @extend %h100;
   background-color: white;
