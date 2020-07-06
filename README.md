@@ -12,6 +12,7 @@ InventoryManagementSystem with django &amp; nextjs
 </div>
 
 <img style='box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);padding:10px;width:100%;margin:10px;border-radius:8px' src="./img/index-desktop-1.png" alt="info"/>
+<img style='box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);padding:10px;width:100%;margin:10px;border-radius:8px' src="./img/index-desktop-2.png" alt="info"/>
 
 <img style='box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);padding:10px;width:40%;height:auto;margin:10px;border-radius:8px' src="./img/menuoverlay-mobile.png" alt="info"/>
 
@@ -49,23 +50,28 @@ $ source venv/bin/activate
 ```
 
 ### Setup Backend Server
+
 go to backend and migrate database
+
 ```bash
 $ cd backend
 $ python manage.py migrate
 ```
 
 install requirement
+
 ```bash
 $ pip install -r requirements.txt
 ```
 
 createsuperuser
+
 ```bash
 $ python manage.py createsuperuser
 ```
 
-runserver 
+runserver
+
 ```bash
 $ python manage.py runserver
 ```
@@ -77,24 +83,28 @@ Authorization Grant Type : password
 Redirect Urls : http://localhost:8000
 
 go to InventoryManagementSystem/frontend/pages/api/index.js to set you clientId and clientSecret
+
 ```javascript
 export const clientId = 'your clientid';
 export const clientSecret = 'your clientsecret';
 ```
 
-
 ### Setup Frontend Server
+
 go to frontend directory
+
 ```bash
 $ cd frontend
 ```
 
 install dependencies
+
 ```bash
 $ npm install
 ```
 
 start server http://localhost:3000/
+
 ```bash
 $ npm run dev
 ```
