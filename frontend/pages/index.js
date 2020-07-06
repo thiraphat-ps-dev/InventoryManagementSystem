@@ -185,7 +185,7 @@ class index extends Component {
       <Layout title="InventoryManagementSystem">
         <div className="dashboard-container">
           <div className="-left">
-            <div id='statusCard' className="status-container">
+            <div id="statusCard" className="status-container">
               <div className="card">
                 <div className="icon">
                   <FontAwesomeIcon icon={faEnvelope} />
@@ -216,7 +216,7 @@ class index extends Component {
                 </div>
               </div>
             </div>
-            <div id='statisticsBorrow' className="statistics-container">
+            <div id="statisticsBorrow" className="statistics-container">
               <div className="header">
                 <h2>Borrowing statistics</h2>
                 <div className="select-div">
@@ -237,7 +237,6 @@ class index extends Component {
                 </div>
               </div>
               <Chart
-              
                 options={
                   this.state.select === 'year'
                     ? this.state.optionsyear
@@ -257,10 +256,10 @@ class index extends Component {
                 width="100%"
               />
             </div>
-            <TableItem  />
+            <TableItem />
           </div>
           <div className="-right">
-            <div id='avaliableItem' className="conic-container">
+            <div id="avaliableItem" className="conic-container">
               <div className="header">
                 <h2>Items in stock</h2>
               </div>
@@ -271,7 +270,7 @@ class index extends Component {
                 height="100%"
               />
             </div>
-            <div id='lastAdd' className="last-itemlist">
+            <div id="lastAdd" className="last-itemlist">
               <div className="header">
                 <h2>Last add</h2>
               </div>
@@ -295,7 +294,7 @@ class index extends Component {
               </ul>
             </div>
 
-            <div id='lastRequest' className="last-itemlist">
+            <div id="lastRequest" className="last-itemlist">
               <div className="header">
                 <h2>Last request</h2>
               </div>
