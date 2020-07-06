@@ -21,7 +21,7 @@ $light: #ffffff;
   width: 100%;
 }
 
-%h100{
+%h100 {
   height: 100%;
 }
 
@@ -32,6 +32,13 @@ $light: #ffffff;
 %h100vh {
   height: 100vw;
 }
+
+%w100-h100 {
+  width: 100%;
+  height: 100%;
+}
+
+// font weight
 
 %fw600 {
   font-weight: 600;
@@ -114,4 +121,22 @@ $light: #ffffff;
 }
 %jcsb {
   justify-content: space-between;
+}
+
+// Defalt css
+
+// Hover css
+%hover5 {
+  box-shadow: 0 5px 1px #3c3a7e;
+  transform: translateY(-5px);
+}
+%hover10 {
+  box-shadow: 0 10px 1px #3c3a7e;
+  transform: translateY(-10px);
+}
+
+//Active css
+%active0 {
+  transform: translateY(0px);
+  box-shadow: 0 0 0 #5957b9;
 }

@@ -1,23 +1,19 @@
 .menuoverlay-container {
+  @extend %w100-h100;
   z-index: 10;
   margin-top: 58px;
-  // @extend %posf;
   position: absolute;
-  height: 100%;
-  width: 100%;
-  top:0;
-  left:0;
-  @extend %w100;
-  @extend %h100;
+  top: 0;
+  left: 0;
   background-color: white;
   opacity: 0;
   visibility: hidden;
   display: none;
   transition: opacity 600ms, visibility 600ms;
   > .user-container {
+    @extend %flex-col;
     min-height: 250px;
     padding: 20px;
-    @extend %flex-col;
     align-items: center;
     transition: all 0.5s;
     > .user-image {
@@ -40,12 +36,12 @@
     @extend %w100;
     @extend %flex-col;
     button {
-      cursor: pointer;
       @extend %w100;
       @extend %flex-row;
+      @extend %bdn-oln;
       color: white;
       background-color: #fff;
-      @extend %bdn-oln;
+      cursor: pointer;
       padding: 10px 20px;
       min-width: 200px;
       color: #5957b9;
@@ -59,15 +55,13 @@
         border-bottom-left-radius: 0;
       }
 
-      @extend %transition-3;
+      transition: all 0.2s;
       transform: translateY(0px);
       &:hover {
-        box-shadow: 0 5px 1px #3c3a7e;
-        transform: translateY(-5px);
+        @extend %hover5;
       }
       &:active {
-        transform: translateY(0px);
-        box-shadow: 0 0 0 #5957b9;
+        @extend %active0;
       }
     }
     .fa-home,
@@ -75,7 +69,6 @@
     .fa-location-arrow,
     .fa-receipt,
     .fa-history {
-   
       @extend %icon20;
     }
   }
@@ -84,9 +77,9 @@
     @extend %jcc-aic;
     margin-top: 50px;
     > .btn-signout {
-      cursor: pointer;
-
       @extend %flex-row;
+      @extend %shadow-low;
+      cursor: pointer;
       border: #5957b9 solid 2px;
       border-radius: 5px;
       padding: 5px 10px;
@@ -98,16 +91,12 @@
         @extend %icon15;
         margin-left: 10px;
       }
-      @extend %shadow-low;
-      @extend %transition-3;
-      transform: translateY(0px);
+      transition: all 0.2s;
       &:hover {
-        box-shadow: 0 5px 1px #5957b9;
-        transform: translateY(-5px);
+        @extend %hover5;
       }
       &:active {
-        transform: translateY(0px);
-        box-shadow: 0 0 0 #5957b9;
+        @extend %active0;
       }
     }
   }

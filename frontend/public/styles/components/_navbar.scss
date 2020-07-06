@@ -1,17 +1,16 @@
 .nav-container {
-  z-index: 11;
   @extend %flex-row;
+  @extend %pd10;
+  @extend %shadow-low;
+  z-index: 11;
   justify-content: space-between;
   user-select: none;
   padding-left: 300px;
-  @extend %pd10;
   position: fixed;
-
   width: 100%;
-  background-color: #FFFFFF;
-  @extend %shadow-low;
+  background-color: #ffffff;
 
-  >.text-header{
+  > .text-header {
     align-items: center;
     display: none;
   }
@@ -20,6 +19,7 @@
     @extend %flex-row;
     align-items: center;
     .fa-search {
+      @extend %shadow-low;
       width: 30px;
       height: 30px;
       margin-left: 10px;
@@ -28,16 +28,12 @@
       border-radius: 50%;
       padding: 5px;
       cursor: pointer;
-      @extend %shadow-low;
-      @extend %transition-3;
-      transform: translateY(0px);
+      transition: all 0.2s;
       &:hover {
-        box-shadow: 0 5px 1px #5957b9;
-        transform: translateY(-5px);
+        @extend %hover5;
       }
       &:active {
-        transform: translateY(0px);
-        box-shadow: 0 0 0 #5957b9;
+        @extend %active0;
       }
     }
     input {
@@ -52,9 +48,10 @@
     }
   }
   > .btn-signout {
-    cursor: pointer;
-
     @extend %flex-row;
+    @extend %shadow-low;
+    transition: all 0.2s;
+    cursor: pointer;
     border: #5957b9 solid 2px;
     border-radius: 5px;
     padding: 5px 10px;
@@ -67,23 +64,18 @@
       height: 15px;
       margin-left: 10px;
     }
-    @extend %shadow-low;
-    @extend %transition-3;
-    transform: translateY(0px);
     &:hover {
-      box-shadow: 0 5px 1px #5957b9;
-      transform: translateY(-5px);
+      @extend %hover5;
     }
     &:active {
-      transform: translateY(0px);
-      box-shadow: 0 0 0 #5957b9;
+      @extend %active0;
     }
   }
   > .btn-menu {
-    
+    @extend %flex-row;
+    @extend %shadow-low;
     cursor: pointer;
     display: none;
-    @extend %flex-row;
     border: #5957b9 solid 2px;
     border-radius: 5px;
     padding: 5px 10px;
@@ -96,16 +88,12 @@
       width: 20px;
       height: 20px;
     }
-    @extend %shadow-low;
-    @extend %transition-3;
-    transform: translateY(0px);
+    transition: all 0.2s;
     &:hover {
-      box-shadow: 0 5px 1px #5957b9;
-      transform: translateY(-5px);
+      @extend %hover5;
     }
     &:active {
-      transform: translateY(0px);
-      box-shadow: 0 0 0 #5957b9;
+      @extend %active0;
     }
   }
 }
@@ -125,9 +113,9 @@
 @media (max-width: 767.98px) {
   .nav-container {
     padding-left: 0;
-    
-    >.text-header{
-      margin-left: 10px;  
+
+    > .text-header {
+      margin-left: 10px;
       display: flex;
       font-size: 16px;
       font-weight: 500;

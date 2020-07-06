@@ -5,18 +5,19 @@
   height: 100vh;
   font-family: 'Poppins', sans-serif;
   user-select: none;
+  >.top-bg {
+    @extend %w100;
+    position: absolute;
+    top: 0;
+  }
+  >.bottom-bg {
+    @extend %w100;
+    position: absolute;
+    bottom: 0;
+  }
 }
 
-.bg-top {
-  @extend %w100;
-  position: absolute;
-  top: 0;
-}
-.bg-bottom {
-  @extend %w100;
-  position: absolute;
-  bottom: 0;
-}
+
 
 .login-container {
   @extend %pos-center;
@@ -30,6 +31,8 @@
   &:hover {
     @extend %shadow-high;
   }
+
+  
 }
 
 .login-banner {

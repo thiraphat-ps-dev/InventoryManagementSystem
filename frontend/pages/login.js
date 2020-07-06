@@ -51,7 +51,7 @@ class Login extends Component {
           <title>Login Page</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
-        <img className="bg-top" src="/images/Path 7.png" alt="" />
+        <img className="top-bg" src="/images/Path 7.png" alt="" />
         <div className="login-container">
           <div className="login-banner">
             <img className="bg-banner" src="/images/64644 (1).png" alt="" />
@@ -117,7 +117,7 @@ class Login extends Component {
             </form>
           </div>
         </div>
-        <img className="bg-bottom" src="/images/Path 6.png" alt="" />
+        <img className="bottom-bg" src="/images/Path 6.png" alt="" />
       </main>
     );
   }

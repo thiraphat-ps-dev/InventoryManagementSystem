@@ -184,7 +184,7 @@ class index extends Component {
     return (
       <Layout title="InventoryManagementSystem">
         <div className="dashboard-container">
-          <div className="left-content">
+          <div className="-left">
             <div className="status-container">
               <div className="card">
                 <div className="icon">
@@ -258,7 +258,7 @@ class index extends Component {
             </div>
             <TableItem />
           </div>
-          <div className="right-content">
+          <div className="-right">
             <div className="conic-container">
               <div className="header">
                 <h2>Items in stock</h2>
