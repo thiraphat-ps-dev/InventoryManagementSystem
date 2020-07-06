@@ -8,7 +8,7 @@ router.register(r'employees', EmployeeViewSet, basename='employees')
 
 urlpatterns = [
     url(r'^', include(router.urls)),
-    url(r'^user/(?P<user__username>\w+)$',
+    url(r'^user$',
         EmployeeDataView.as_view(), name='user'),
     url(r'^additem$', AddItemView.as_view(), name='additem'),
 

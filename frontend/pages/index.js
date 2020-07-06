@@ -2,8 +2,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faDesktop, faCheck, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-// import Chart from 'react-apexcharts';
+import {
+  faChevronDown,
+  faDesktop,
+  faCheck,
+  faEnvelope,
+} from '@fortawesome/free-solid-svg-icons';
 import _ from 'lodash';
 import dynamic from 'next/dynamic';
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
@@ -107,8 +111,6 @@ class index extends Component {
       optionsd: {
         chart: {
           type: 'donut',
-          // height: '100%',
-          // width: '100px',
         },
         legend: {
           position: 'top',
@@ -179,42 +181,41 @@ class index extends Component {
         created_at: '20/20/2020',
       },
     ];
-    console.table(lastitemlist);
-
+    const cardList = [
+      {
+        icon: faEnvelope,
+        text: 'Request',
+        number: 105,
+      },
+      {
+        icon: faCheck,
+        text: 'Avaliable',
+        number: 105,
+      },
+      {
+        icon: faDesktop,
+        text: 'Items',
+        number: 105,
+      },
+    ];
     return (
       <Layout title="InventoryManagementSystem">
         <div className="dashboard-container">
           <div className="-left">
             <div id="statusCard" className="status-container">
-              <div className="card">
-                <div className="icon">
-                  <FontAwesomeIcon icon={faEnvelope} />
-                </div>
-                <div className="text">
-                  <p className="text-header">Request</p>
-                  <h2 className="text-number">105</h2>
-                </div>
-              </div>
-
-              <div className="card">
-                <div className="icon">
-                  <FontAwesomeIcon icon={faCheck} />
-                </div>
-                <div className="text">
-                  <p className="text-header">Avaliable</p>
-                  <h2 className="text-number">105</h2>
-                </div>
-              </div>
-
-              <div className="card">
-                <div className="icon">
-                  <FontAwesomeIcon icon={faDesktop} />
-                </div>
-                <div className="text">
-                  <p className="text-header">Items</p>
-                  <h2 className="text-number">105</h2>
-                </div>
-              </div>
+              {_.map(cardList, (item, i) => {
+                return (
+                  <div key={i} className="card">
+                    <div className="icon">
+                      <FontAwesomeIcon icon={item.icon} />
+                    </div>
+                    <div className="text">
+                      <p className="text-header">{item.text}</p>
+                      <h2 className="text-number">{item.number}</h2>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
             <div id="statisticsBorrow" className="statistics-container">
               <div className="header">
@@ -284,7 +285,9 @@ class index extends Component {
                         <p>CreateDate : {item.created_at}</p>
                       </div>
                       <div
-                        className={`status ${item.status === 'Avaliable' ? 'ready' : 'notready'}`}
+                        className={`status ${
+                          item.status === 'Avaliable' ? 'ready' : 'notready'
+                        }`}
                       >
                         {item.status}
                       </div>
@@ -308,7 +311,9 @@ class index extends Component {
                         <p>CreateDate : {item.created_date}</p>
                       </div>
                       <div
-                        className={`status ${item.status === 'Avaliable' ? 'ready' : 'notready'}`}
+                        className={`status ${
+                          item.status === 'Avaliable' ? 'ready' : 'notready'
+                        }`}
                       >
                         {item.status}
                       </div>

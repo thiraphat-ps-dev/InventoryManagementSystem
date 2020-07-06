@@ -114,36 +114,34 @@ class TableItem extends Component {
       },
     ];
     return (
-      <div id='itemList' className="table-item">
+      <div id="itemList" className="table-item">
         <div className="header">
           <h2>Item List</h2>
         </div>
         <div className="table">
           <table>
             <thead>
-              {_.map(_.take(itemlist, 1), (item, i) => {
+              {_.map(_.take(itemlist, 1), (item, id) => {
                 return (
-                  <tr key={i}>
-                    {_.map(item, (value, key, i) => {
-                      return <th key={i}>{key}</th>;
+                  <tr key={id}>
+                    {_.map(item, (value, key) => {
+                      return <th key={key}>{key}</th>;
                     })}
                   </tr>
                 );
               })}
             </thead>
             <tbody>
-              {_.map(itemlist.reverse(), (item, i) => {
-                // console.log('pass');
-
+              {_.map(itemlist.reverse(), (item, index) => {
                 return (
-                  <tr key={i}>
-                    {_.map(item, (value, key, i) => {
+                  <tr key={index}>
+                    {_.map(item, (value, key) => {
                       return key === 'image' ? (
-                        <td>
+                        <td key={key}>
                           <img src={value} alt="" />
                         </td>
                       ) : (
-                        <td key={i}>{value}</td>
+                        <td key={key}>{value}</td>
                       );
                     })}
                   </tr>

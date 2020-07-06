@@ -12,6 +12,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 import Link from 'next/link';
+import _ from 'lodash';
 import { dispatchAuthentication } from '../../redux/actions';
 
 class Sidebar extends Component {
@@ -27,12 +28,45 @@ class Sidebar extends Component {
     const content = document.querySelector('.content-container');
     console.log(
       'setContentPadLeft',
-      sidebarShow ? content.classList.add('active') : content.classList.remove('active')
+      sidebarShow
+        ? content.classList.add('active')
+        : content.classList.remove('active')
     );
   }
 
   render() {
-    // const { toggle } = this.state;
+    const menuList = [
+      {
+        idButton: 'menuHome',
+        path: '/',
+        icon: faHome,
+        text: 'Home',
+      },
+      {
+        idButton: 'menuItem',
+        path: '/item',
+        icon: faImage,
+        text: 'Item',
+      },
+      {
+        idButton: 'menuLocation',
+        path: '/location',
+        icon: faLocationArrow,
+        text: 'Location',
+      },
+      {
+        idButton: 'menuBorrowing',
+        path: '/borrowing',
+        icon: faReceipt,
+        text: 'Borrowing',
+      },
+      {
+        idButton: 'menuHistory',
+        path: '/history',
+        icon: faHistory,
+        text: 'History',
+      },
+    ];
     const menuActive = location.pathname;
     return (
       <aside className="sidebar-container">
@@ -51,43 +85,31 @@ class Sidebar extends Component {
             <p className="user-email">Email@mail.com</p>
           </div>
           <div className="btn-container">
-            <Link href="/">
-              <button className={`menu-item ${menuActive === '/' ? 'active' : ''}`}>
-                <FontAwesomeIcon icon={faHome} />
-                <p>Home</p>
-              </button>
-            </Link>
-            <Link href="/item">
-              <button id='menuItem' className={`menu-item ${menuActive === '/item' ? 'active' : ''}`}>
-                <FontAwesomeIcon icon={faImage} />
-                <p>Item</p>
-              </button>
-            </Link>
-            <Link href="/location">
-              <button className={`menu-item ${menuActive === '/location' ? 'active' : ''}`}>
-                <FontAwesomeIcon icon={faLocationArrow} />
-                <p>Location</p>
-              </button>
-            </Link>
-            <Link href="/borrowing">
-              <button className={`menu-item ${menuActive === '/borrowing' ? 'active' : ''}`}>
-                <FontAwesomeIcon icon={faReceipt} />
-                <p>Borrowing</p>
-              </button>
-            </Link>
-            <Link href="/history">
-              <button className={`menu-item ${menuActive === '/history' ? 'active' : ''}`}>
-                <FontAwesomeIcon icon={faHistory} />
-                <p>History</p>
-              </button>
-            </Link>
+            {_.map(menuList, (item, i) => {
+              return (
+                <Link key={i} href={item.path}>
+                  <button
+                    id={item.idButton}
+                    className={`menu-item ${
+                      menuActive === item.path ? 'active' : ''
+                    }`}
+                  >
+                    <FontAwesomeIcon icon={item.icon} />
+                    <p>{item.text}</p>
+                  </button>
+                </Link>
+              );
+            })}
           </div>
           <div className="toggle-container">
             <button
               type="submit"
               onClick={async () => {
                 await this.setState({ toggle: !this.state.toggle });
-                localStorage.setItem('sidebarShow', JSON.stringify(this.state.toggle));
+                localStorage.setItem(
+                  'sidebarShow',
+                  JSON.stringify(this.state.toggle)
+                );
                 const content = document.querySelector('.content-container');
                 console.log(
                   this.state.toggle

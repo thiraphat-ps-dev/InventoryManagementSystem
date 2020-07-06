@@ -7,7 +7,12 @@ import { connect } from 'react-redux';
 import Link from 'next/link';
 import Router from 'next/router';
 import Head from 'next/head';
-import { dispatchIncrement, dispatchDecrement, dispatchAuthentication } from '../redux/actions';
+import {
+  dispatchIncrement,
+  dispatchDecrement,
+  dispatchAuthentication,
+  dispatchSetUserdata,
+} from '../redux/actions';
 import { headers, api, clientId, clientSecret } from './api';
 
 const fetch = require('node-fetch');
@@ -33,7 +38,14 @@ class Login extends Component {
         localStorage.setItem('sidebarShow', JSON.stringify(true));
         this.setState({ error: '' });
         this.props.handleLogin(data);
-        Router.push({ pathname: '/' });
+        // this.props.handleSetUserdata(data);
+        const res_user = await fetch(api.get_token, {
+          method: 'POST',
+          headers,
+          body: `grant_type=password&username=${username}&password=${password}&client_id=${clientId}&client_secret=${clientSecret}`,
+        });
+
+        // Router.push({ pathname: '/' });
       } else {
         this.setState({ error: 'Username or password is incorrect' });
       }
@@ -42,14 +54,16 @@ class Login extends Component {
     }
   };
 
-
   render() {
     const { username, password, error } = this.state;
     return (
       <main className="login-page">
         <Head>
           <title>Login Page</title>
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+          />
         </Head>
         <img className="top-bg" src="/images/Path 7.png" alt="" />
         <div className="login-container">
@@ -57,11 +71,14 @@ class Login extends Component {
             <img className="bg-banner" src="/images/64644 (1).png" alt="" />
           </div>
           <div className="form-container">
-            <form className="login-form" onKeyDown={(e)=>{
-              if (e.key === 'Enter') {
-                this.login();
-              }
-            }}>
+            <form
+              className="login-form"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  this.login();
+                }
+              }}
+            >
               <div className="header">
                 <p>Login</p>
               </div>
@@ -137,6 +154,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   handleLogin: (data) => {
     dispatch(dispatchAuthentication(data));
+  },
+  handleSetUserdata: (data) => {
+    dispatch(dispatchSetUserdata(data));
   },
 });
 
