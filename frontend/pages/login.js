@@ -42,6 +42,7 @@ class Login extends Component {
     }
   };
 
+
   render() {
     const { username, password, error } = this.state;
     return (
@@ -56,7 +57,11 @@ class Login extends Component {
             <img className="bg-banner" src="/images/64644 (1).png" alt="" />
           </div>
           <div className="form-container">
-            <form className="login-form">
+            <form className="login-form" onKeyDown={(e)=>{
+              if (e.key === 'Enter') {
+                this.login();
+              }
+            }}>
               <div className="header">
                 <p>Login</p>
               </div>
