@@ -1,0 +1,15 @@
+[
+  {
+    "model": "api.employee",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "jobposition": 1,
+      "position": 1,
+      "mapuser": "34,44,270,350",
+      "image": "employees/2020/07/06/a65832155622ac173337874f02b218fb.png",
+      "created_at": "2020-07-06T11:57:57.394Z",
+      "updated_at": "2020-07-06T11:57:57.394Z"
+    }
+  }
+]

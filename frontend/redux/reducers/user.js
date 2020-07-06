@@ -1,10 +1,10 @@
 import Immutable from 'immutable';
-import { AUTHENTICATION } from '../actions';
+import { AUTHENTICATION, SETUSERDATA } from '../actions';
 // import { INCREMENT, DECREMENT } from '../actions';
 
 const initialState = Immutable.fromJS({
-  authData: [],
-  userData: [],
+  authData: null,
+  userData: null,
 });
 
 const userReducer = (state = initialState, action) => {

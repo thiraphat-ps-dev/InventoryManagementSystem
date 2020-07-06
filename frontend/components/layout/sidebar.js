@@ -68,6 +68,8 @@ class Sidebar extends Component {
       },
     ];
     const menuActive = location.pathname;
+    const user = this.props.userdata.userData;
+    console.log(user);
     return (
       <aside className="sidebar-container">
         <div className="brand-container">
@@ -75,31 +77,26 @@ class Sidebar extends Component {
         </div>
         <nav className={`menu-container ${this.state.toggle ? 'active' : ''}`}>
           <div className="user-container">
-            <img
-              alt=""
-              className="user-image"
-              src="https://i.pinimg.com/originals/a6/58/32/a65832155622ac173337874f02b218fb.png"
-            />
-            <p className="user-username">Username</p>
-            <p className="user-role">Admin</p>
-            <p className="user-email">Email@mail.com</p>
+            <img alt="" className="user-image" src={user ? user.image : null} />
+
+            <p className="user-username">{user ? user.name : null}</p>
+            <p className="user-role">{user ? user.jobposition : null}</p>
+            <p className="user-email">{user ? user.email : null}</p>
           </div>
           <div className="btn-container">
-            {_.map(menuList, (item, i) => {
-              return (
-                <Link key={i} href={item.path}>
-                  <button
-                    id={item.idButton}
-                    className={`menu-item ${
-                      menuActive === item.path ? 'active' : ''
-                    }`}
-                  >
-                    <FontAwesomeIcon icon={item.icon} />
-                    <p>{item.text}</p>
-                  </button>
-                </Link>
-              );
-            })}
+            {_.map(menuList, (item, i) => (
+              <Link key={i} href={item.path}>
+                <button
+                  id={item.idButton}
+                  className={`menu-item ${
+                    menuActive === item.path ? 'active' : ''
+                  }`}
+                >
+                  <FontAwesomeIcon icon={item.icon} />
+                  <p>{item.text}</p>
+                </button>
+              </Link>
+            ))}
           </div>
           <div className="toggle-container">
             <button

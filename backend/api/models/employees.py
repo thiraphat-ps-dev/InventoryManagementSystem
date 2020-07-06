@@ -4,8 +4,7 @@ from django.contrib.auth.models import User
 
 
 class Employee(models.Model):
-    user = models.ForeignKey(User, unique=True, on_delete=models.CASCADE)
-    department = models.ForeignKey(Department, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     jobposition = models.ForeignKey(Jobposition, on_delete=models.CASCADE)
     position = models.ForeignKey(Position, on_delete=models.CASCADE)
     mapuser = models.CharField(max_length=50)
@@ -14,4 +13,4 @@ class Employee(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.mapuser
+        return self.user.id
