@@ -15,9 +15,15 @@ class EmployeeViewSet(viewsets.ModelViewSet):
     pagination_class = CustomPagination
 
 
-class EmployeeDataView(generics.RetrieveAPIView):
+class EmployeeDataView(generics.ListAPIView):
     permission_classes = [permissions.IsAuthenticated]
-    lookup_field = 'user__username'
-    queryset = Employee.objects.all()
+    # lookup_field = 'user__username'
+
+    def get_queryset(self):
+        """Returns Polls that belong to the current user"""
+        current_user = self.request.user
+        return Employee.objects.filter(id=current_user.id)
+    # print current_user.id
+    # queryset = Employee.objects.filter(id=current_user.id)
     serializer_class = EmployeeSerializer
     pagination_class = None

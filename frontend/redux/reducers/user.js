@@ -3,7 +3,8 @@ import { AUTHENTICATION } from '../actions';
 // import { INCREMENT, DECREMENT } from '../actions';
 
 const initialState = Immutable.fromJS({
-  data: [],
+  authData: [],
+  userData: [],
 });
 
 const userReducer = (state = initialState, action) => {
@@ -11,8 +12,13 @@ const userReducer = (state = initialState, action) => {
     case AUTHENTICATION: {
       return {
         ...state,
-        // count: action.books,
-        data: action.data,
+        authData: action.data,
+      };
+    }
+    case SETUSERDATA: {
+      return {
+        ...state,
+        userData: action.data,
       };
     }
     default: {

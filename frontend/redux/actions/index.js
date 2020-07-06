@@ -7,6 +7,7 @@ export const START_CLOCK = 'START_CLOCK';
 export const STOP_CLOCK = 'STOP_CLOCK';
 
 export const AUTHENTICATION = 'AUTHENTICATION';
+export const SETUSERDATA = 'SETUSERDATA';
 
 // ========================= DISPATCHERS
 export const dispatchIncrement = () => ({ type: INCREMENT });
@@ -32,4 +33,9 @@ export const dispatchStopClock = () => (dispatch) => {
   clearInterval(timer);
 };
 
-export const dispatchAuthentication = (data) => ({ type: AUTHENTICATION, data });
+export const dispatchAuthentication = (data) => ({
+  type: AUTHENTICATION,
+  data,
+});
+
+export const dispatchSetUserdata = (data) => ({ type: SETUSERDATA, data });
