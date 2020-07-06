@@ -7,8 +7,8 @@ Suite Teardown    Close All Browsers
 
 *** Keywords ***
 OpenLoginPage
-    OpenBrowser                 http://localhost:3000/login          chrome
-    # OpenBrowser      http://localhost:3000/login    headlesschrome
+    # OpenBrowser                 http://localhost:3000/login          chrome
+    OpenBrowser      http://localhost:3000/login    headlesschrome
     Title Should Be             Login Page
 
 ClickButtonSignin
@@ -47,5 +47,10 @@ TestLoginSuccess
     Input Text                  id:inputUsername                     admin
     Input Text                  id:inputPassword                     1234
     ClickButtonSignin
-    Sleep               2
+    Wait Until Page Contains Element                        id:statusCard
+    Wait Until Page Contains Element                        id:statisticsBorrow
+    Wait Until Page Contains Element                        id:itemList
+    Wait Until Page Contains Element                        id:avaliableItem
+    Wait Until Page Contains Element                        id:lastAdd
+    Wait Until Page Contains Element                        id:lastRequest
     Title Should Be                 InventoryManagementSystem

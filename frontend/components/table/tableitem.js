@@ -114,7 +114,7 @@ class TableItem extends Component {
       },
     ];
     return (
-      <div className="table-item">
+      <div id='itemList' className="table-item">
         <div className="header">
           <h2>Item List</h2>
         </div>

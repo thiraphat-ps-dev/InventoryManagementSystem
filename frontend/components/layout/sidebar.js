@@ -58,7 +58,7 @@ class Sidebar extends Component {
               </button>
             </Link>
             <Link href="/item">
-              <button className={`menu-item ${menuActive === '/item' ? 'active' : ''}`}>
+              <button id='menuItem' className={`menu-item ${menuActive === '/item' ? 'active' : ''}`}>
                 <FontAwesomeIcon icon={faImage} />
                 <p>Item</p>
               </button>
