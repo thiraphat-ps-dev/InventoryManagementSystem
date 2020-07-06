@@ -128,6 +128,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 
+
 OAUTH2_PROVIDER = {
     # this is the list of available scopes
     'SCOPES': {'read': 'Read scope', 'write': 'Write scope', 'groups': 'Access to your groups'},
@@ -151,3 +152,5 @@ CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
     'https://localhost:3000',
 )
+
+

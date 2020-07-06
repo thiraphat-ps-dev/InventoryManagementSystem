@@ -9,7 +9,7 @@ class Item extends Component {
 
   render() {
     return (
-      <Layout title="InventoryManagementSystem">
+      <Layout title="ItemList">
         <h1>this item page</h1>
       </Layout>
     );

@@ -21,8 +21,9 @@ class Navbar extends Component {
   render() {
     return (
       <nav className="nav-container">
+        <h1 className="text-header">InventoryManagementSystem</h1>
         <div className="search-container">
-          <input type="text" placeholder="Search" />
+          <input type="text" placeholder="Search Item" />
           <FontAwesomeIcon icon={faSearch} />
         </div>
         <button

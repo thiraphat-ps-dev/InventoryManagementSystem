@@ -98,10 +98,11 @@
         color: #5957b9;
         align-items: center;
         justify-content: space-between;
-        @extend %transition-3;
-        
+        // @extend %transition-3;
+        transition: all .2s;
         &.active {
-          @extend %transition-3;
+          transition: all .2s;
+          // @extend %transition-3;
           color: #fff;
           background-color: #5957b9;
           border-radius: 30px;
@@ -110,7 +111,7 @@
           
         }
 
-        @extend %transition-3;
+        // @extend %transition-3;
         transform: translateY(0px);
         &:hover {
           box-shadow: 0 5px 1px #3c3a7e;

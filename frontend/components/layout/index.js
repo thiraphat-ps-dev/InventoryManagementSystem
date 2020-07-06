@@ -20,7 +20,7 @@ export default class Layout extends Component {
     console.log(checkLogin);
     const { children, title = 'This is the default title' } = this.props;
     return (
-      <div>
+      <div style={{ position: 'relative' }}>
         <Head>
           <title>{title}</title>
           <meta charSet="utf-8" />
