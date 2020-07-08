@@ -3,12 +3,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Layout from '../../components/layout';
+import TableHistoryList from '../../components/table/tableHistoryList';
 
 class History extends Component {
   render() {
     return (
       <Layout title="InventoryManagementSystem">
-        <h1>this item page</h1>
+        <div className="table-container">
+          <TableHistoryList />
+        </div>
       </Layout>
     );
   }

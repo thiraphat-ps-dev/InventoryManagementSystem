@@ -8,7 +8,7 @@ class Item extends Component {
   render() {
     return (
       <Layout title="ItemList">
-        <div className="item-container">
+        <div className="table-container">
           <TableItemList />
         </div>
       </Layout>

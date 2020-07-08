@@ -2,9 +2,7 @@
   > .header {
     @extend %shadow-low;
     padding: 20px;
-    // margin: 10px;
-    display: flex;
-    flex-direction: row;
+    @extend %flex-row;
     justify-content: space-between;
     align-items: center;
 
@@ -14,11 +12,10 @@
       font-size: 24px;
     }
     .btn-additem {
-      display: flex;
-      flex-direction: row;
+      @extend %flex-row;
       align-items: center;
       border-radius: 5px;
-      padding: 8px 10px;
+      padding: 10px;
       background-color: #5957b9;
       color: white;
       border: none;
@@ -53,9 +50,20 @@
           background-color: #5957b9;
           border: 1px solid #ffffff34;
           font-size: 16px;
-
           color: #ffffff;
           padding: 15px;
+          div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            .fa-chevron-down,
+            .fa-chevron-up {
+              width: 15px;
+              height: 15px;
+              margin-left: 5px;
+            }
+          }
           &:first-child {
             border-left: none;
             border-top-left-radius: 8px;
@@ -67,6 +75,7 @@
         }
       }
       tbody {
+        
         tr {
           &:nth-child(even) {
             background-color: rgba(228, 228, 228, 0.274);
@@ -90,23 +99,44 @@
               width: 25px;
               height: 25px;
               color: #5957b9;
+              cursor: pointer;
             }
             .fa-trash {
               width: 20px;
               height: 20px;
               color: red;
+              cursor: pointer;
+            }
+            .fa-check {
+              width: 20px;
+              height: 20px;
+              color: #12cf12;
+              cursor: pointer;
+            }
+            .fa-times {
+              width: 20px;
+              height: 20px;
+              color: red;
+              cursor: pointer;
             }
             img {
               width: 30px;
               height: auto;
+              transition: all 1s;
+       
+              &:hover{
+                transition: all 1s;
+                zoom: 1.5;
+                transform: scale(1.5);
+              }
             }
-            // padding: 10px;
             .status {
               color: #ffffff;
               margin: auto;
               max-width: fit-content;
               font-size: 12px;
               font-weight: bold;
+              user-select: none;
               &.ready {
                 background-color: #12cf12;
               }
@@ -115,6 +145,16 @@
               }
               padding: 7px;
               border-radius: 5px;
+
+              transition: all 0.2s;
+              &:hover {
+                box-shadow: 0 5px 1px #3c3a7e;
+                transform: translateY(-5px);
+              }
+              &:active {
+                transform: translateY(0px);
+                box-shadow: 0 0 0 #5957b9;
+              }
             }
           }
         }
@@ -122,23 +162,20 @@
     }
   }
   .pagination {
-    display: flex;
-    flex-direction: row;
+    @extend %flex-row;
     justify-content: flex-end;
     align-items: center;
     flex-wrap: wrap;
-
-    // padding: 20px 0;
+    user-select: none;
     .rowperpage {
-      display: flex;
-      flex-direction: row;
+      @extend %flex-row;
       align-items: center;
       p {
         margin-right: 5px;
       }
       select {
         border-radius: 8px;
-        width: 50px;
+        width: 60px;
       }
     }
     .shownow {
@@ -147,12 +184,12 @@
     .paginationbar {
       display: flex;
       align-items: center;
-
+      flex-wrap: wrap;
       a {
         color: #5957b9;
         font-weight: bold;
         background-color: #ffffff;
-
+        cursor: pointer;
         padding: 5px 10px;
         transition: all 0.2s;
         text-decoration: none;
