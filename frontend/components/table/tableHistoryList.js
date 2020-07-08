@@ -10,12 +10,13 @@ import {
   faStepForward,
   faCaretLeft,
   faCaretRight,
-  faChevronDown,
+  faCheck,
+  faTimes,
 } from '@fortawesome/free-solid-svg-icons';
 import _ from 'lodash';
 import { dispatchAuthentication } from '../../redux/actions';
 
-class TableItemList extends Component {
+class TableHistoryList extends Component {
   constructor(props) {
     super(props);
     this.state = { menuShow: false };
@@ -30,9 +31,11 @@ class TableItemList extends Component {
           'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
         location: 'One Building',
         serial: '0001',
-        status: 'Avaliable',
-        created_at: '20/20/2020',
+        status: 'Not Avaliable',
         updated_at: '20/20/2020',
+        quantity: 1,
+        request_by: 'admin',
+        status_borrow: 'Approve',
       },
       {
         id: 2,
@@ -41,9 +44,11 @@ class TableItemList extends Component {
           'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
         location: 'One Building',
         serial: '0001',
-        status: 'Avaliable',
-        created_at: '20/20/2020',
+        status: 'Not Avaliable',
         updated_at: '20/20/2020',
+        quantity: 1,
+        request_by: 'admin',
+        status_borrow: 'Approve',
       },
       {
         id: 3,
@@ -52,9 +57,11 @@ class TableItemList extends Component {
           'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
         location: 'One Building',
         serial: '0001',
-        status: 'Avaliable',
-        created_at: '20/20/2020',
+        status: 'Not Avaliable',
         updated_at: '20/20/2020',
+        quantity: 1,
+        request_by: 'admin',
+        status_borrow: 'Approve',
       },
       {
         id: 4,
@@ -63,9 +70,11 @@ class TableItemList extends Component {
           'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
         location: 'One Building',
         serial: '0001',
-        status: 'Avaliable',
-        created_at: '20/20/2020',
+        status: 'Not Avaliable',
         updated_at: '20/20/2020',
+        quantity: 1,
+        request_by: 'admin',
+        status_borrow: 'Approve',
       },
       {
         id: 5,
@@ -75,8 +84,10 @@ class TableItemList extends Component {
         location: 'One Building',
         serial: '0001',
         status: 'Not Avaliable',
-        created_at: '20/20/2020',
         updated_at: '20/20/2020',
+        quantity: 1,
+        request_by: 'admin',
+        status_borrow: 'Approve',
       },
       {
         id: 6,
@@ -86,8 +97,10 @@ class TableItemList extends Component {
         location: 'One Building',
         serial: '0001',
         status: 'Not Avaliable',
-        created_at: '20/20/2020',
         updated_at: '20/20/2020',
+        quantity: 1,
+        request_by: 'admin',
+        status_borrow: 'Approve',
       },
       {
         id: 7,
@@ -96,9 +109,11 @@ class TableItemList extends Component {
           'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
         location: 'One Building',
         serial: '0001',
-        status: 'Avaliable',
-        created_at: '20/20/2020',
+        status: 'Not Avaliable',
         updated_at: '20/20/2020',
+        quantity: 1,
+        request_by: 'admin',
+        status_borrow: 'Approve',
       },
       {
         id: 8,
@@ -108,8 +123,10 @@ class TableItemList extends Component {
         location: 'One Building',
         serial: '0001',
         status: 'Avaliable',
-        created_at: '20/20/2020',
         updated_at: '20/20/2020',
+        quantity: 1,
+        request_by: 'admin',
+        status_borrow: 'Reject',
       },
       {
         id: 9,
@@ -119,8 +136,10 @@ class TableItemList extends Component {
         location: 'One Building',
         serial: '0001',
         status: 'Avaliable',
-        created_at: '20/20/2020',
         updated_at: '20/20/2020',
+        quantity: 1,
+        request_by: 'admin',
+        status_borrow: 'Reject',
       },
       {
         id: 10,
@@ -130,36 +149,25 @@ class TableItemList extends Component {
         location: 'One Building',
         serial: '0001',
         status: 'Avaliable',
-        created_at: '20/20/2020',
         updated_at: '20/20/2020',
+        quantity: 1,
+        request_by: 'admin',
+        status_borrow: 'Reject',
       },
     ];
     return (
       <div id="itemList" className="table-item">
         <div className="header">
-          <h2>Item List</h2>
-          <button
-            className="btn-additem"
-            onClick={() => this.setState({ show: true })}
-          >
-            Add Item <FontAwesomeIcon icon={faPlus} />
-          </button>
+          <h2>Borrowing List</h2>
         </div>
         <div className="table">
           <table>
             <thead>
               {_.map(_.take(data, 1), (item, id) => (
                 <tr key={id}>
-                 <th>Id</th>
-                 <th>Name</th>
-                 <th>Image</th>
-                 <th>Location</th>
-                 <th>Serial</th>
-                 <th>Status</th>
-                 <th>created_at</th>
-                 <th>updated_at</th>
-                  <th>Edit</th>
-                  <th>Delete</th>
+                  {_.map(item, (value, key) => (
+                    <th key={key}>{key}</th>
+                  ))}
                 </tr>
               ))}
             </thead>
@@ -184,16 +192,17 @@ class TableItemList extends Component {
                       {item.status}
                     </div>
                   </td>
-                  <td>{item.created_at}</td>
                   <td>{item.updated_at}</td>
-                  <td width={40}>
-                    {' '}
-                    <FontAwesomeIcon icon={faEdit} />
-                  </td>
-
-                  <td width={40}>
-                    {' '}
-                    <FontAwesomeIcon icon={faTrash} />
+                  <td>{item.quantity}</td>
+                  <td>{item.request_by}</td>
+                  <td>
+                    <div
+                      className={`status ${
+                        item.status_borrow === 'Approve' ? 'ready' : 'notready'
+                      }`}
+                    >
+                      {item.status_borrow}
+                    </div>
                   </td>
                 </tr>
               ))}
@@ -242,4 +251,4 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(TableItemList);
+export default connect(mapStateToProps, mapDispatchToProps)(TableHistoryList);
