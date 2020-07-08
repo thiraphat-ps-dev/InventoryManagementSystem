@@ -322,6 +322,36 @@ class index extends Component {
                 })}
               </ul>
             </div>
+          
+          
+            <div id="lastRequest" className="last-itemlist">
+              <div className="header">
+                <h2>Last borrow</h2>
+              </div>
+              <ul className="item-list">
+                {_.map(lastitemlist.reverse(), (item, i) => {
+                  return (
+                    <li key={i}>
+                      <img src={item.image} alt="" />
+                      <div className="text">
+                        <p>Name : {item.name}</p>
+                        <p>CreateDate : {item.created_date}</p>
+                      </div>
+                      <div
+                        className={`status ${
+                          item.status === 'Avaliable' ? 'ready' : 'notready'
+                        }`}
+                      >
+                        {item.status}
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+        
+          
+          
           </div>
         </div>
       </Layout>

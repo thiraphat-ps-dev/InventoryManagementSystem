@@ -1,10 +1,24 @@
 /* eslint-disable no-undef */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faEdit,
+  faTrash,
+  faPlus,
+  faFastBackward,
+  faFastForward,
+  faBackward,
+  faForward,
+  faStepBackward,
+  faStepForward,
+  faCaretLeft,
+  faCaretRight,
+} from '@fortawesome/free-solid-svg-icons';
 import _ from 'lodash';
 import { dispatchAuthentication } from '../../redux/actions';
 
-class TableItem extends Component {
+class TableItemList extends Component {
   constructor(props) {
     super(props);
     this.state = { menuShow: false };
@@ -21,6 +35,7 @@ class TableItem extends Component {
         serial: '0001',
         status: 'Avaliable',
         created_at: '20/20/2020',
+        updated_at: '20/20/2020',
       },
       {
         id: 2,
@@ -31,6 +46,7 @@ class TableItem extends Component {
         serial: '0001',
         status: 'Avaliable',
         created_at: '20/20/2020',
+        updated_at: '20/20/2020',
       },
       {
         id: 3,
@@ -41,6 +57,7 @@ class TableItem extends Component {
         serial: '0001',
         status: 'Avaliable',
         created_at: '20/20/2020',
+        updated_at: '20/20/2020',
       },
       {
         id: 4,
@@ -51,6 +68,7 @@ class TableItem extends Component {
         serial: '0001',
         status: 'Avaliable',
         created_at: '20/20/2020',
+        updated_at: '20/20/2020',
       },
       {
         id: 5,
@@ -61,6 +79,7 @@ class TableItem extends Component {
         serial: '0001',
         status: 'Not Avaliable',
         created_at: '20/20/2020',
+        updated_at: '20/20/2020',
       },
       {
         id: 6,
@@ -71,6 +90,7 @@ class TableItem extends Component {
         serial: '0001',
         status: 'Not Avaliable',
         created_at: '20/20/2020',
+        updated_at: '20/20/2020',
       },
       {
         id: 7,
@@ -81,6 +101,7 @@ class TableItem extends Component {
         serial: '0001',
         status: 'Avaliable',
         created_at: '20/20/2020',
+        updated_at: '20/20/2020',
       },
       {
         id: 8,
@@ -91,6 +112,7 @@ class TableItem extends Component {
         serial: '0001',
         status: 'Avaliable',
         created_at: '20/20/2020',
+        updated_at: '20/20/2020',
       },
       {
         id: 9,
@@ -101,6 +123,7 @@ class TableItem extends Component {
         serial: '0001',
         status: 'Avaliable',
         created_at: '20/20/2020',
+        updated_at: '20/20/2020',
       },
       {
         id: 10,
@@ -111,12 +134,19 @@ class TableItem extends Component {
         serial: '0001',
         status: 'Avaliable',
         created_at: '20/20/2020',
+        updated_at: '20/20/2020',
       },
     ];
     return (
       <div id="itemList" className="table-item">
         <div className="header">
           <h2>Item List</h2>
+          <button
+            className="btn-additem"
+            onClick={() => this.setState({ show: true })}
+          >
+            Add Item <FontAwesomeIcon icon={faPlus} />
+          </button>
         </div>
         <div className="table">
           <table>
@@ -126,35 +156,73 @@ class TableItem extends Component {
                   {_.map(item, (value, key) => (
                     <th key={key}>{key}</th>
                   ))}
+                  <th>Edit</th>
+                  <th>Delete</th>
                 </tr>
               ))}
             </thead>
             <tbody>
               {_.map(itemlist.reverse(), (item, index) => (
                 <tr key={index}>
-                  {_.map(item, (value, key) =>
-                    key === 'image' ? (
-                      <td key={key}>
-                        <img src={value} alt="" />
-                      </td>
-                    ) : key === 'status' ? (
-                      <td key={key}>
-                        <div
-                          className={`status ${
-                            value === 'Avaliable' ? 'ready' : 'notready'
-                          }`}
-                        >
-                          {value}
-                        </div>
-                      </td>
-                    ) : (
-                      <td key={key}>{value}</td>
-                    )
-                  )}
+                  <td>{item.id}</td>
+                  <td>{item.name}</td>
+                  <td>
+                    {' '}
+                    <img src={item.image} alt="" />
+                  </td>
+                  <td>{item.location}</td>
+                  <td>{item.serial}</td>
+                  <td>
+                    {' '}
+                    <div
+                      className={`status ${
+                        item.status === 'Avaliable' ? 'ready' : 'notready'
+                      }`}
+                    >
+                      {item.status}
+                    </div>
+                  </td>
+                  <td>{item.created_at}</td>
+                  <td>{item.updated_at}</td>
+                  <td width={40}>
+                    {' '}
+                    <FontAwesomeIcon icon={faEdit} />
+                  </td>
+
+                  <td width={40}>
+                    {' '}
+                    <FontAwesomeIcon icon={faTrash} />
+                  </td>
                 </tr>
               ))}
             </tbody>
           </table>
+        </div>
+        <div className="pagination">
+          <div className="rowperpage">
+            <p>Rows per page :</p>
+            <select name="" id="">
+              <option value="10">10</option>
+              <option value="20">20</option>
+            </select>
+          </div>
+          <div className="shownow">
+            <p>1-10 of 146</p>
+          </div>
+
+          <div className="paginationbar">
+            <FontAwesomeIcon icon={faStepBackward} />
+            <FontAwesomeIcon icon={faCaretLeft} />
+            <a href="#" className="active">
+              1
+            </a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <FontAwesomeIcon icon={faCaretRight} />
+            <FontAwesomeIcon icon={faStepForward} />
+          </div>
         </div>
       </div>
     );
@@ -172,4 +240,4 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(TableItem);
+export default connect(mapStateToProps, mapDispatchToProps)(TableItemList);
