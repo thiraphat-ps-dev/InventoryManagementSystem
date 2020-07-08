@@ -158,7 +158,7 @@ class TableHistoryList extends Component {
     return (
       <div id="itemList" className="table-item">
         <div className="header">
-          <h2>Borrowing List</h2>
+          <h2>History List</h2>
         </div>
         <div className="table">
           <table>
