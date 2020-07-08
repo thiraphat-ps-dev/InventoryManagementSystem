@@ -27,7 +27,7 @@ InventoryManagementSystem with django &amp; nextjs
 
 <img style='box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);padding:10px;width:60%;height:auto;margin:10px;border-radius:8px' src="./img/borrow-desktop.png" alt="info"/>
 
-<img style='box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);padding:10px;width:60%;height:auto;margin:10px;border-radius:8px' src="./img/history-desktop.png" alt="info"/>
+<img style='box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);padding:10px;width:60%;height:auto;margin:10px;border-radius:8px' src="./img/history-desktop1.png" alt="info"/>
 
 ## Installation
 
