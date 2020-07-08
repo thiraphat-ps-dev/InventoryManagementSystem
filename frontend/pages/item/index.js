@@ -3,14 +3,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Layout from '../../components/layout';
-
+import TableItemList from '../../components/table/tableitemList';
 class Item extends Component {
-
-
   render() {
     return (
       <Layout title="ItemList">
-        <h1>this item page</h1>
+        <div className="item-container">
+          <TableItemList />
+        </div>
       </Layout>
     );
   }

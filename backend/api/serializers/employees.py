@@ -8,6 +8,12 @@ class EmployeeSerializer(serializers.ModelSerializer):
     username = serializers.CharField(source='user.username', read_only=True)
     email = serializers.CharField(source='user.email', read_only=True)
     name = serializers.CharField(source='user.first_name', read_only=True)
+    department = serializers.CharField(
+        source='jobposition.department', read_only=True)
+    jobposition = serializers.CharField(
+        source='jobposition.title', read_only=True)
+    position = serializers.CharField(
+        source='position.title', read_only=True)
 
     class Meta:
         model = Employee

@@ -38,14 +38,19 @@ class Login extends Component {
         localStorage.setItem('sidebarShow', JSON.stringify(true));
         this.setState({ error: '' });
         this.props.handleLogin(data);
-        // this.props.handleSetUserdata(data);
-        const res_user = await fetch(api.get_token, {
-          method: 'POST',
-          headers,
-          body: `grant_type=password&username=${username}&password=${password}&client_id=${clientId}&client_secret=${clientSecret}`,
-        });
 
-        // Router.push({ pathname: '/' });
+        const resUser = await fetch(api.get_user, {
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${data.access_token}`,
+            Accept: 'application/json',
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+        });
+        const userData = await resUser.json();
+        console.log(userData);
+        this.props.handleSetUserdata(userData);
+        Router.push({ pathname: '/' });
       } else {
         this.setState({ error: 'Username or password is incorrect' });
       }
