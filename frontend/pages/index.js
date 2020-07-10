@@ -139,7 +139,7 @@ class index extends Component {
         id: 1,
         name: 'notebook i3',
         image:
-          'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
+          'https://res.cloudinary.com/cenergy-innovation-limited-head-office/image/fetch/c_scale,q_70,f_auto,h_740/https://d1dtruvuor2iuy.cloudfront.net/media/catalog/product/2/4/249790_1.jpg',
         location: 'One Building',
         status: 'Avaliable',
         created_at: '20/20/2020',
@@ -148,7 +148,7 @@ class index extends Component {
         id: 2,
         name: 'notebook i5 ram 14 cpu 12',
         image:
-          'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
+          'https://res.cloudinary.com/cenergy-innovation-limited-head-office/image/fetch/c_scale,q_70,f_auto,h_740/https://d1dtruvuor2iuy.cloudfront.net/media/catalog/product/2/4/249790_1.jpg',
         location: 'One Building',
         status: 'Avaliable',
         created_at: '20/20/2020',
@@ -157,7 +157,7 @@ class index extends Component {
         id: 3,
         name: 'notebook i7',
         image:
-          'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
+          'https://res.cloudinary.com/cenergy-innovation-limited-head-office/image/fetch/c_scale,q_70,f_auto,h_740/https://d1dtruvuor2iuy.cloudfront.net/media/catalog/product/2/4/249790_1.jpg',
         location: 'One Building',
         status: 'Avaliable',
         created_at: '20/20/2020',
@@ -166,7 +166,7 @@ class index extends Component {
         id: 4,
         name: 'notebook i9',
         image:
-          'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
+          'https://res.cloudinary.com/cenergy-innovation-limited-head-office/image/fetch/c_scale,q_70,f_auto,h_740/https://d1dtruvuor2iuy.cloudfront.net/media/catalog/product/2/4/249790_1.jpg',
         location: 'One Building',
         status: 'Avaliable',
         created_at: '20/20/2020',
@@ -175,7 +175,7 @@ class index extends Component {
         id: 5,
         name: 'notebook i10',
         image:
-          'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
+          'https://res.cloudinary.com/cenergy-innovation-limited-head-office/image/fetch/c_scale,q_70,f_auto,h_740/https://d1dtruvuor2iuy.cloudfront.net/media/catalog/product/2/4/249790_1.jpg',
         location: 'One Building',
         status: 'Not Avaliable',
         created_at: '20/20/2020',
@@ -322,8 +322,7 @@ class index extends Component {
                 })}
               </ul>
             </div>
-          
-          
+
             <div id="lastRequest" className="last-itemlist">
               <div className="header">
                 <h2>Last borrow</h2>
@@ -349,9 +348,6 @@ class index extends Component {
                 })}
               </ul>
             </div>
-        
-          
-          
           </div>
         </div>
       </Layout>

@@ -75,7 +75,6 @@
         }
       }
       tbody {
-        
         tr {
           &:nth-child(even) {
             background-color: rgba(228, 228, 228, 0.274);
@@ -123,12 +122,8 @@
               width: 30px;
               height: auto;
               transition: all 1s;
-       
-              &:hover{
-                transition: all 1s;
-                zoom: 1.5;
-                transform: scale(1.5);
-              }
+
+              
             }
             .status {
               color: #ffffff;

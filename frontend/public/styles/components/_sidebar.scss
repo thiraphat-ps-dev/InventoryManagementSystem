@@ -1,8 +1,6 @@
 .sidebar-container {
   position: fixed;
   top: 0;
-  // display: flex;
-  // flex-direction: row;
   @extend %flex-row;
   height: 100%;
   z-index: 12;
@@ -10,7 +8,6 @@
     background-color: #5957b9;
     display: flex;
     align-items: center;
-    // @extend %shadow-high;
     h1 {
       padding: 10px;
       transform: rotateZ(180deg) translateX(3px);
@@ -25,11 +22,11 @@
     // @extend %shadow-high;
     box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.25);
     max-width: 60px;
-    transition: all 0.5s linear ;
+    transition: all 0.5s linear;
     overflow: hidden;
     &.active {
       //   max-width: none;
-      transition: all 0.5s linear ;
+      transition: all 0.5s linear;
       transition-delay: unset !important;
       max-width: 100%;
 
@@ -52,10 +49,7 @@
     > .user-container {
       min-height: 350px;
       padding: 20px;
-      // display: flex;
-      // flex-direction: column;
       @extend %flex-col;
-      // justify-content: center;
       align-items: center;
       transition: all 0.5s;
       p {
@@ -82,8 +76,6 @@
 
     > .btn-container {
       width: 100%;
-      // display: flex;
-      // flex-direction: column;
       @extend %flex-col;
       button {
         cursor: pointer;
@@ -98,20 +90,16 @@
         color: #5957b9;
         align-items: center;
         justify-content: space-between;
-        // @extend %transition-3;
-        transition: all .2s;
+        transition: all 0.2s;
         &.active {
-          transition: all .2s;
-          // @extend %transition-3;
+          transition: all 0.2s;
+
           color: #fff;
           background-color: #5957b9;
           border-radius: 30px;
           border-top-left-radius: 0;
           border-bottom-left-radius: 0;
-          
         }
-
-        // @extend %transition-3;
         transform: translateY(0px);
         &:hover {
           box-shadow: 0 5px 1px #3c3a7e;
@@ -132,13 +120,11 @@
       }
     }
     > .toggle-container {
-      
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 20px;
       button {
-        
         cursor: pointer;
         border-radius: 50%;
         background-color: #5957b9;
