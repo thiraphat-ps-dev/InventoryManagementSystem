@@ -4,8 +4,8 @@ import Head from 'next/head';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import configureStore from '../redux/persist';
-import './../public/styles/main.scss';
 import withReduxStore from '../lib/with-redux-store';
+import './../public/styles/main.scss';
 
 const { persistor } = configureStore();
 
@@ -16,13 +16,7 @@ class MyApp extends App {
       <div>
         <Head>
           <title>InventoryManagementSystem</title>
-          <link
-            rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-            crossOrigin="anonymous"
-          />
-          <script src="js/smoothscroll.min.js"></script>
+          {/* <script src="js/smoothscroll.min.js" /> */}
         </Head>
         <Provider store={reduxStore}>
           <PersistGate loading={null} persistor={persistor}>
