@@ -9,11 +9,13 @@ services:
     stdin_open: true
     tty: true
     command: bash -c "
+      python manage.py makemigrations &&
+      python manage.py migrate &&
       python manage.py loaddata api/fixtures/user.json &&
       python manage.py loaddata api/fixtures/location.json &&
       python manage.py loaddata api/fixtures/floor.json &&
       python manage.py loaddata api/fixtures/position.json &&
       python manage.py loaddata api/fixtures/department.json &&
       python manage.py loaddata api/fixtures/jobposition.json &&
-      python manage.py loaddata api/fixtures/user.json &&
+      python manage.py loaddata api/fixtures/employee.json &&
       python3 manage.py runserver 0.0.0.0:8000"

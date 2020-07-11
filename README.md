@@ -85,6 +85,8 @@ runserver
 $ python manage.py runserver
 ```
 
+login django-admin http://localhost:8000/admin
+
 create you application http://localhost:8000/o/applications/
 
 Client type : confidential
