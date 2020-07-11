@@ -43,6 +43,7 @@
   // &:hover {
   //   @extend %shadow-high;
   // }
+  z-index: 10;
 }
 
 .login-banner {
@@ -81,8 +82,6 @@
   border-left: 0;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
-
-  
 }
 
 .login-form {
