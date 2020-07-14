@@ -14,9 +14,10 @@
     @extend %w100;
     position: absolute;
     top: 0;
-    height: 150px;
+    height: 300px;
     > div {
-      background-size: 100% 100px !important;
+      // background-size: 100% 100px !important;
+      background-size: 100% !important;
       background-position: top center !important;
     }
   }
@@ -24,10 +25,11 @@
     @extend %w100;
     position: absolute;
     bottom: 0;
-    height: 150px;
+    height: 300px;
     > div {
-      background-size: 100% 100px !important;
+      // background-size: 100% 100px !important;
       background-position: bottom center !important;
+      background-size: 100% !important;
     }
   }
 }
@@ -44,17 +46,18 @@
   //   @extend %shadow-high;
   // }
   z-index: 10;
+  background-color: rgb(175, 170, 248);
+  border: 2px solid $primary;
 }
 
 .login-banner {
   @extend %pd20;
   @extend %flex-col;
   @extend %jcc-aic;
-  border: 2px solid $primary;
-  border-right: none;
-  border-radius: 8px 0 0 8px;
+
   background: #ffffff80 0% 0% no-repeat padding-box;
   position: relative;
+  border: none !important;
 }
 
 .bg-banner {
@@ -76,12 +79,6 @@
   min-width: 300px;
   min-height: 300px;
   user-select: none;
-
-  border: 2px solid #5957b9;
-  border-radius: 8px;
-  border-left: 0;
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
 }
 
 .login-form {
@@ -211,11 +208,6 @@
 @media (max-width: 767.98px) {
   .login-container {
     flex-direction: column;
-  }
-
-  .login-banner {
-    border: 2px solid $primary;
-    border-radius: 8px 8px 0 0;
   }
 }
 

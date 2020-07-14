@@ -125,6 +125,11 @@ class Login extends PureComponent {
               </div>
 
               <div className="btn-block">
+                <Link href="/">
+                  <a className="forgot-button" href="www.google.com">
+                    forgot password
+                  </a>
+                </Link>
                 <button
                   className="signin-button"
                   type="button"
@@ -135,12 +140,8 @@ class Login extends PureComponent {
                 >
                   Sign In <FontAwesomeIcon icon={faSignInAlt} />
                 </button>
-                <Link href="/">
-                  <a className="forgot-button" href="www.google.com">
-                    forgot password
-                  </a>
-                </Link>
               </div>
+
               {error !== '' ? (
                 <label className="error-label" htmlFor="password">
                   {error}
