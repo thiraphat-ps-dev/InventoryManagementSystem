@@ -1,0 +1,27 @@
+{
+  "short_name": "IMVS PWA",
+  "name": "IMVS PWA",
+  "description": "NextJS app with offline support",
+  "lang": "en-GB",
+  "icons": [
+    {
+      "src": "/images/pwa-144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "/images/pwa-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/pwa-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/?source=pwa",
+  "background_color": "#FFFFFF",
+  "display": "standalone",
+  "theme_color": "#3f51b5"
+}

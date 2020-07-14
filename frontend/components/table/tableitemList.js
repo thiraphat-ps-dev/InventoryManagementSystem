@@ -27,7 +27,7 @@ class TableItemList extends Component {
         id: 1,
         name: 'macbook pro 11 inc',
         image:
-          'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
+          'https://res.cloudinary.com/cenergy-innovation-limited-head-office/image/fetch/c_scale,q_70,f_auto,h_740/https://d1dtruvuor2iuy.cloudfront.net/media/catalog/product/2/4/249790_1.jpg',
         location: 'One Building',
         serial: '0001',
         status: 'Avaliable',
@@ -38,7 +38,7 @@ class TableItemList extends Component {
         id: 2,
         name: 'macbook pro 11 inc',
         image:
-          'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
+          'https://res.cloudinary.com/cenergy-innovation-limited-head-office/image/fetch/c_scale,q_70,f_auto,h_740/https://d1dtruvuor2iuy.cloudfront.net/media/catalog/product/2/4/249790_1.jpg',
         location: 'One Building',
         serial: '0001',
         status: 'Avaliable',
@@ -49,7 +49,7 @@ class TableItemList extends Component {
         id: 3,
         name: 'macbook pro 11 inc',
         image:
-          'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
+          'https://res.cloudinary.com/cenergy-innovation-limited-head-office/image/fetch/c_scale,q_70,f_auto,h_740/https://d1dtruvuor2iuy.cloudfront.net/media/catalog/product/2/4/249790_1.jpg',
         location: 'One Building',
         serial: '0001',
         status: 'Avaliable',
@@ -60,7 +60,7 @@ class TableItemList extends Component {
         id: 4,
         name: 'macbook pro 11 inc',
         image:
-          'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
+          'https://res.cloudinary.com/cenergy-innovation-limited-head-office/image/fetch/c_scale,q_70,f_auto,h_740/https://d1dtruvuor2iuy.cloudfront.net/media/catalog/product/2/4/249790_1.jpg',
         location: 'One Building',
         serial: '0001',
         status: 'Avaliable',
@@ -71,7 +71,7 @@ class TableItemList extends Component {
         id: 5,
         name: 'macbook pro 11 inc',
         image:
-          'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
+          'https://res.cloudinary.com/cenergy-innovation-limited-head-office/image/fetch/c_scale,q_70,f_auto,h_740/https://d1dtruvuor2iuy.cloudfront.net/media/catalog/product/2/4/249790_1.jpg',
         location: 'One Building',
         serial: '0001',
         status: 'Not Avaliable',
@@ -82,7 +82,7 @@ class TableItemList extends Component {
         id: 6,
         name: 'macbook pro 11 inc',
         image:
-          'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
+          'https://res.cloudinary.com/cenergy-innovation-limited-head-office/image/fetch/c_scale,q_70,f_auto,h_740/https://d1dtruvuor2iuy.cloudfront.net/media/catalog/product/2/4/249790_1.jpg',
         location: 'One Building',
         serial: '0001',
         status: 'Not Avaliable',
@@ -93,7 +93,7 @@ class TableItemList extends Component {
         id: 7,
         name: 'macbook pro 11 inc',
         image:
-          'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
+          'https://res.cloudinary.com/cenergy-innovation-limited-head-office/image/fetch/c_scale,q_70,f_auto,h_740/https://d1dtruvuor2iuy.cloudfront.net/media/catalog/product/2/4/249790_1.jpg',
         location: 'One Building',
         serial: '0001',
         status: 'Avaliable',
@@ -104,7 +104,7 @@ class TableItemList extends Component {
         id: 8,
         name: 'macbook pro 11 inc',
         image:
-          'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
+          'https://res.cloudinary.com/cenergy-innovation-limited-head-office/image/fetch/c_scale,q_70,f_auto,h_740/https://d1dtruvuor2iuy.cloudfront.net/media/catalog/product/2/4/249790_1.jpg',
         location: 'One Building',
         serial: '0001',
         status: 'Avaliable',
@@ -115,7 +115,7 @@ class TableItemList extends Component {
         id: 9,
         name: 'macbook pro 11 inc',
         image:
-          'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
+          'https://res.cloudinary.com/cenergy-innovation-limited-head-office/image/fetch/c_scale,q_70,f_auto,h_740/https://d1dtruvuor2iuy.cloudfront.net/media/catalog/product/2/4/249790_1.jpg',
         location: 'One Building',
         serial: '0001',
         status: 'Avaliable',
@@ -126,7 +126,7 @@ class TableItemList extends Component {
         id: 10,
         name: 'macbook pro 11 inc',
         image:
-          'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
+          'https://res.cloudinary.com/cenergy-innovation-limited-head-office/image/fetch/c_scale,q_70,f_auto,h_740/https://d1dtruvuor2iuy.cloudfront.net/media/catalog/product/2/4/249790_1.jpg',
         location: 'One Building',
         serial: '0001',
         status: 'Avaliable',
@@ -150,14 +150,14 @@ class TableItemList extends Component {
             <thead>
               {_.map(_.take(data, 1), (item, id) => (
                 <tr key={id}>
-                 <th>Id</th>
-                 <th>Name</th>
-                 <th>Image</th>
-                 <th>Location</th>
-                 <th>Serial</th>
-                 <th>Status</th>
-                 <th>created_at</th>
-                 <th>updated_at</th>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>Image</th>
+                  <th>Location</th>
+                  <th>Serial</th>
+                  <th>Status</th>
+                  <th>created_at</th>
+                  <th>updated_at</th>
                   <th>Edit</th>
                   <th>Delete</th>
                 </tr>

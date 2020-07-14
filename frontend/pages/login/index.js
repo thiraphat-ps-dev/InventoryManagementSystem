@@ -1,26 +1,24 @@
 /* eslint-disable max-len */
 /* eslint-disable no-undef */
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 import Link from 'next/link';
 import Router from 'next/router';
 import Head from 'next/head';
-import {
-  dispatchIncrement,
-  dispatchDecrement,
-  dispatchAuthentication,
-  dispatchSetUserdata,
-} from '../redux/actions';
-import { headers, api, clientId, clientSecret } from './api';
-
+import PreloadImage from 'react-preload-image';
+import { dispatchAuthentication, dispatchSetUserdata } from '../../redux/actions';
+import { headers, api, clientId, clientSecret } from '../api';
 const fetch = require('node-fetch');
 
-class Login extends Component {
+class Login extends PureComponent {
   constructor(props) {
     super(props);
     this.state = { username: '', password: '', error: '' };
+  }
+  componentWillMount() {
+    console.log((document.documentElement.lang = 'en'));
   }
 
   login = async () => {
@@ -61,19 +59,32 @@ class Login extends Component {
 
   render() {
     const { username, password, error } = this.state;
+
     return (
       <main className="login-page">
         <Head>
           <title>Login Page</title>
+          <meta charSet="utf-8" />
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta
             name="viewport"
-            content="initial-scale=1.0, width=device-width"
+            content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
           />
+          <meta name="description" content="Description" />
+          <meta name="keywords" content="Keywords" />
+
+          <link rel="manifest" href="/manifest.json" />
+          <link href="/favicon-16x16.png" rel="icon" type="image/png" sizes="16x16" />
+          <link href="/favicon-32x32.png" rel="icon" type="image/png" sizes="32x32" />
+          <link rel="apple-touch-icon" href="/apple-icon.png" />
+          <meta name="theme-color" content="#317EFB" />
         </Head>
-        <img className="top-bg" src="/images/Path 7.png" alt="" />
+        {/* <img className="top-bg" src="/images/Path 7.png" alt="" />*/}
+        <PreloadImage className="top-bg" src="/images/top.png" lazy />
         <div className="login-container">
           <div className="login-banner">
-            <img className="bg-banner" src="/images/64644 (1).png" alt="" />
+            {/* <img className="bg-banner" src="/images/banner.png" alt="" /> */}
+            <PreloadImage className="bg-banner" src="/images/banner.png" lazy />
           </div>
           <div className="form-container">
             <form
@@ -114,23 +125,23 @@ class Login extends Component {
               </div>
 
               <div className="btn-block">
+                <Link href="/">
+                  <a className="forgot-button" href="www.google.com">
+                    forgot password
+                  </a>
+                </Link>
                 <button
                   className="signin-button"
                   type="button"
                   id="btn-signin"
                   onClick={() => {
                     this.login();
-                    // this.props.handleBookSubmit();
                   }}
                 >
                   Sign In <FontAwesomeIcon icon={faSignInAlt} />
                 </button>
-                <Link href="/">
-                  <a className="forgot-button" href="www.google.com">
-                    forgot password
-                  </a>
-                </Link>
               </div>
+
               {error !== '' ? (
                 <label className="error-label" htmlFor="password">
                   {error}
@@ -139,24 +150,18 @@ class Login extends Component {
             </form>
           </div>
         </div>
-        <img className="bottom-bg" src="/images/Path 6.png" alt="" />
+        <PreloadImage className="bottom-bg" src="/images/bottom.png" lazy />
+        {/* <img className="bottom-bg" src="/images/Path 6.png" alt="" /> */}
       </main>
     );
   }
 }
 
 const mapStateToProps = (state) => ({
-  countreducer: state.counts,
   userdata: state.user,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  handleBookSubmit: () => {
-    dispatch(dispatchIncrement());
-  },
-  handleBookDelete: () => {
-    dispatch(dispatchDecrement());
-  },
   handleLogin: (data) => {
     dispatch(dispatchAuthentication(data));
   },

@@ -2,18 +2,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import _ from 'lodash';
 import {
-  faEdit,
-  faTrash,
-  faPlus,
   faStepBackward,
   faStepForward,
   faCaretLeft,
   faCaretRight,
-  faCheck,
-  faTimes,
 } from '@fortawesome/free-solid-svg-icons';
-import _ from 'lodash';
 import { dispatchAuthentication } from '../../redux/actions';
 
 class TableHistoryList extends Component {
@@ -28,7 +23,7 @@ class TableHistoryList extends Component {
         id: 1,
         name: 'macbook pro 11 inc',
         image:
-          'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
+          'https://res.cloudinary.com/cenergy-innovation-limited-head-office/image/fetch/c_scale,q_70,f_auto,h_740/https://d1dtruvuor2iuy.cloudfront.net/media/catalog/product/2/4/249790_1.jpg',
         location: 'One Building',
         serial: '0001',
         status: 'Not Avaliable',
@@ -41,7 +36,7 @@ class TableHistoryList extends Component {
         id: 2,
         name: 'macbook pro 11 inc',
         image:
-          'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
+          'https://res.cloudinary.com/cenergy-innovation-limited-head-office/image/fetch/c_scale,q_70,f_auto,h_740/https://d1dtruvuor2iuy.cloudfront.net/media/catalog/product/2/4/249790_1.jpg',
         location: 'One Building',
         serial: '0001',
         status: 'Not Avaliable',
@@ -54,7 +49,7 @@ class TableHistoryList extends Component {
         id: 3,
         name: 'macbook pro 11 inc',
         image:
-          'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
+          'https://res.cloudinary.com/cenergy-innovation-limited-head-office/image/fetch/c_scale,q_70,f_auto,h_740/https://d1dtruvuor2iuy.cloudfront.net/media/catalog/product/2/4/249790_1.jpg',
         location: 'One Building',
         serial: '0001',
         status: 'Not Avaliable',
@@ -67,7 +62,7 @@ class TableHistoryList extends Component {
         id: 4,
         name: 'macbook pro 11 inc',
         image:
-          'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
+          'https://res.cloudinary.com/cenergy-innovation-limited-head-office/image/fetch/c_scale,q_70,f_auto,h_740/https://d1dtruvuor2iuy.cloudfront.net/media/catalog/product/2/4/249790_1.jpg',
         location: 'One Building',
         serial: '0001',
         status: 'Not Avaliable',
@@ -80,7 +75,7 @@ class TableHistoryList extends Component {
         id: 5,
         name: 'macbook pro 11 inc',
         image:
-          'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
+          'https://res.cloudinary.com/cenergy-innovation-limited-head-office/image/fetch/c_scale,q_70,f_auto,h_740/https://d1dtruvuor2iuy.cloudfront.net/media/catalog/product/2/4/249790_1.jpg',
         location: 'One Building',
         serial: '0001',
         status: 'Not Avaliable',
@@ -93,7 +88,7 @@ class TableHistoryList extends Component {
         id: 6,
         name: 'macbook pro 11 inc',
         image:
-          'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
+          'https://res.cloudinary.com/cenergy-innovation-limited-head-office/image/fetch/c_scale,q_70,f_auto,h_740/https://d1dtruvuor2iuy.cloudfront.net/media/catalog/product/2/4/249790_1.jpg',
         location: 'One Building',
         serial: '0001',
         status: 'Not Avaliable',
@@ -106,7 +101,7 @@ class TableHistoryList extends Component {
         id: 7,
         name: 'macbook pro 11 inc',
         image:
-          'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
+          'https://res.cloudinary.com/cenergy-innovation-limited-head-office/image/fetch/c_scale,q_70,f_auto,h_740/https://d1dtruvuor2iuy.cloudfront.net/media/catalog/product/2/4/249790_1.jpg',
         location: 'One Building',
         serial: '0001',
         status: 'Not Avaliable',
@@ -119,7 +114,7 @@ class TableHistoryList extends Component {
         id: 8,
         name: 'macbook pro 11 inc',
         image:
-          'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
+          'https://res.cloudinary.com/cenergy-innovation-limited-head-office/image/fetch/c_scale,q_70,f_auto,h_740/https://d1dtruvuor2iuy.cloudfront.net/media/catalog/product/2/4/249790_1.jpg',
         location: 'One Building',
         serial: '0001',
         status: 'Avaliable',
@@ -132,7 +127,7 @@ class TableHistoryList extends Component {
         id: 9,
         name: 'macbook pro 11 inc',
         image:
-          'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
+          'https://res.cloudinary.com/cenergy-innovation-limited-head-office/image/fetch/c_scale,q_70,f_auto,h_740/https://d1dtruvuor2iuy.cloudfront.net/media/catalog/product/2/4/249790_1.jpg',
         location: 'One Building',
         serial: '0001',
         status: 'Avaliable',
@@ -145,7 +140,7 @@ class TableHistoryList extends Component {
         id: 10,
         name: 'macbook pro 11 inc',
         image:
-          'https://748073e22e8db794416a-cc51ef6b37841580002827d4d94d19b6.ssl.cf3.rackcdn.com/not-found.png',
+          'https://res.cloudinary.com/cenergy-innovation-limited-head-office/image/fetch/c_scale,q_70,f_auto,h_740/https://d1dtruvuor2iuy.cloudfront.net/media/catalog/product/2/4/249790_1.jpg',
         location: 'One Building',
         serial: '0001',
         status: 'Avaliable',
@@ -184,11 +179,7 @@ class TableHistoryList extends Component {
                   <td>{item.serial}</td>
                   <td>
                     {' '}
-                    <div
-                      className={`status ${
-                        item.status === 'Avaliable' ? 'ready' : 'notready'
-                      }`}
-                    >
+                    <div className={`status ${item.status === 'Avaliable' ? 'ready' : 'notready'}`}>
                       {item.status}
                     </div>
                   </td>
@@ -224,9 +215,7 @@ class TableHistoryList extends Component {
           <div className="paginationbar">
             <FontAwesomeIcon icon={faStepBackward} />
             <FontAwesomeIcon icon={faCaretLeft} />
-            <a href="#" className="active">
-              1
-            </a>
+            <a className="active">1</a>
             <a>2</a>
             <a>3</a>
             <a>4</a>

@@ -1,53 +1,72 @@
-@import '../_valiables.scss';
+@import '../valiables.scss';
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
 .login-page {
   width: 100vw;
   height: 100vh;
   font-family: 'Poppins', sans-serif;
   user-select: none;
-  >.top-bg {
+  > .top-bg {
     @extend %w100;
     position: absolute;
     top: 0;
+    height: 300px;
+    > div {
+      // background-size: 100% 100px !important;
+      background-size: 100% !important;
+      background-position: top center !important;
+    }
   }
-  >.bottom-bg {
+  > .bottom-bg {
     @extend %w100;
     position: absolute;
     bottom: 0;
+    height: 300px;
+    > div {
+      // background-size: 100% 100px !important;
+      background-position: bottom center !important;
+      background-size: 100% !important;
+    }
   }
 }
-
-
 
 .login-container {
   @extend %pos-center;
   @extend %bdrs8;
   @extend %flex-row;
   @extend %shadow-low;
-  @extend %transition-3;
   background-color: $light;
   position: absolute;
   overflow: hidden;
-  &:hover {
-    @extend %shadow-high;
-  }
-
-  
+  // &:hover {
+  //   @extend %shadow-high;
+  // }
+  z-index: 10;
+  background-color: rgb(175, 170, 248);
+  border: 2px solid $primary;
 }
 
 .login-banner {
   @extend %pd20;
   @extend %flex-col;
   @extend %jcc-aic;
-  border: 2px solid $primary;
-  border-right: none;
-  border-radius: 8px 0 0 8px;
+
   background: #ffffff80 0% 0% no-repeat padding-box;
   position: relative;
-  .bg-banner {
-    @extend %w100;
-    min-width: 300px;
-    max-width: 400px;
+  border: none !important;
+}
+
+.bg-banner {
+  @extend %w100;
+  min-width: 300px;
+  max-width: 400px;
+  min-height: 260px;
+  > div {
+    background-size: contain !important;
   }
 }
 
@@ -58,17 +77,15 @@
   @extend %transition-3;
   background: $light 0% 0% no-repeat padding-box;
   min-width: 300px;
-  min-height: 310px;
+  min-height: 300px;
   user-select: none;
-  &:hover {
-    @extend %shadow-high;
-  }
 }
 
 .login-form {
   @extend %flex-col;
   @extend %jcc-aic;
   @extend %w100;
+
   > .header {
     @extend %flex-row;
     @extend %jcc-aic;
@@ -86,6 +103,7 @@
   > .input {
     @extend %w100;
     @extend %mg10;
+    // padding: 0 20px;
     position: relative;
     > input {
       @extend %font-text;
@@ -103,7 +121,7 @@
     @extend %shadow-low;
     @extend %fw600;
     @extend %bdrs8;
-    @extend %transition-3;
+    transition: all 0.2s;
     @extend %font-text;
     margin: 10px 0;
     background-color: $danger;
@@ -115,13 +133,16 @@
 
 .btn-block {
   @extend %flex-row;
-  @extend %mg10;
+  // @extend %mg10;
+  @extend %w100;
+  margin: 10px 0;
   justify-content: space-between;
 }
 
 .forgot-button {
   @extend %font-btn;
-  @extend %transition-3;
+  // @extend %transition-3;
+  transition: all 0.2s;
   background-color: transparent;
   color: $danger !important;
   text-decoration: none !important;
@@ -136,7 +157,7 @@
     background: $danger;
   }
   &:hover {
-    transform: translateX(2px);
+    // transform: translateX(2px);
     &::after {
       @extend %w100;
     }
@@ -150,21 +171,20 @@
   cursor: pointer;
   @extend %shadow-low;
   @extend %transition-3;
-  padding: 8px 15px;
+  padding: 5px 15px;
   background-color: $success;
   color: white;
   font-weight: 600;
   border: none;
-  background: $primary 0% 0% no-repeat padding-box;
   outline: none !important;
   transform: translateY(0px);
   &:hover {
-    box-shadow: 0 5px 1px #3a3977;
+    box-shadow: 0 5px 1px #528552;
     transform: translateY(-5px);
   }
   &:active {
     transform: translateY(0px);
-    box-shadow: 0 0 0 #3a3977;
+    box-shadow: 0 0 0 #528552;
   }
   > .fa-sign-in-alt {
     width: 15px;
@@ -188,11 +208,6 @@
 @media (max-width: 767.98px) {
   .login-container {
     flex-direction: column;
-  }
-
-  .login-banner {
-    border: 2px solid $primary;
-    border-radius: 8px 8px 0 0;
   }
 }
 
