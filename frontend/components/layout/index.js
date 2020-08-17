@@ -63,7 +63,7 @@ class Layout extends Component {
           <meta name="theme-color" content="#317EFB" />
         </Head>
         {checkLogin !== 'undefined' && checkLogin !== null ? (
-          <div>
+          <div style={{display:'flex'}}>
             <Navbar />
             <Sidebar />
             <Menuoverlay />

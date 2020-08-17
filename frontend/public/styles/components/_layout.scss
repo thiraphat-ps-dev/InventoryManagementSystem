@@ -1,10 +1,15 @@
 .content-container {
-  padding-left: 116px;
+  // padding-left: 116px;
   padding-top: 56px;
-  transition: all 0.6s linear;
+  // transition: all 0.6s linear;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
   &.active {
-    transition: all 0.3s linear;
-    padding-left: 256px;
+    // transition: all 0.6s linear;
+    // padding-left: 256px;
+    width: 100%;
+    
   }
 }
 
@@ -22,11 +27,11 @@
 // Small devices (landscape phones, less than 768px)
 @media (max-width: 767.98px) {
   .content-container {
-    padding-left: 0;
-    transition: all 1.25s;
+    // padding-left: 0;
+    // transition: all 1.25s;
     &.active {
-      transition: all 0.5s;
-      padding-left: 0;
+      // transition: all 0.5s;
+      // padding-left: 0;
     }
   }
 }
