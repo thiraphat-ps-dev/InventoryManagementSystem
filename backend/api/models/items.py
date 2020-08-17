@@ -4,7 +4,7 @@ from api.models import Position ,Category
 
 class Item(models.Model):
     title = models.CharField(max_length=120)
-    description = models.TextField(max_length=120)
+    description = models.TextField(max_length=500)
     number =  models.IntegerField(default=1) 
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     position = models.ForeignKey(Position, on_delete=models.CASCADE)

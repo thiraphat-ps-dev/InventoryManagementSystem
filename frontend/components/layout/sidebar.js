@@ -77,7 +77,15 @@ class Sidebar extends Component {
         </div>
         <nav className={`menu-container ${this.state.toggle ? 'active' : ''}`}>
           <div className="user-container">
-            <img alt="" className="user-image" src={user ? user.image : null} />
+            <img
+              alt=""
+              className="user-image"
+              src={
+                user
+                  ? user.image
+                  : 'https://png.pngtree.com/png-clipart/20190520/original/pngtree-vector-users-icon-png-image_4144740.jpg'
+              }
+            />
 
             <p className="user-username">{user ? user.name : null}</p>
             <p className="user-role">{user ? user.jobposition : null}</p>
